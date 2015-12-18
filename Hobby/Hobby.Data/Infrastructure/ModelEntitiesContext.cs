@@ -9,8 +9,10 @@ namespace Hobby.Data.Infrastructure
 {
     public abstract class ModelEntitiesContext : DbContext
     {
-        public ModelEntitiesContext(string connect) : base (connect)
+        public ModelEntitiesContext(string connect)
+            : base(connect)
         {
-        } 
+        }
+
     }
 }

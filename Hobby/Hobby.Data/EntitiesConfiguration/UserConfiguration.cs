@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hobby.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
@@ -6,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hobby.Entities.ConfigurationEntities
+namespace Hobby.Data.ConfigurationEntities
 {   
-    public class UserConfiguration : EntityTypeConfiguration<User>
+    public partial class UserConfiguration : EntityTypeConfiguration<User>
     {
         public UserConfiguration()
         {

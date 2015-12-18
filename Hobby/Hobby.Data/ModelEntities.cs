@@ -1,28 +1,36 @@
-﻿using Hobby.Data.Infrastructure;
-using Hobby.Entities;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Hobby.Data
+﻿namespace Hobby.Data
 {
-    public class ModelEntities : ModelEntitiesContext
+    using System;
+    using System.Data.Entity;
+    using Hobby.Data.Infrastructure;
+    using Hobby.Entities;
+    using System.Reflection;
+    using Hobby.Data.ConfigurationEntities;
+
+    public class ModelEntities : DbContext
     {
         public ModelEntities()
             : base("HobbyDev")
         {
+            
             SetContext();
         }
+        public IDbSet<User> Users { get; set; }
 
-        void SetContext()
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //modelBuilder.Configurations.AddFromAssembly(Assembly.GetAssembly(GetType())); //Current Assembly
+            //base.OnModelCreating(modelBuilder);
+            //modelBuilder.Configurations.Add(new UserConfiguration());//Pojedyncze dodanie
+            //base.OnModelCreating(modelBuilder);
+            modelBuilder.Configurations.AddFromAssembly(typeof(ModelEntities).Assembly);           
+        }
+
+        private void SetContext()
         {
             Database.SetInitializer<ModelEntities>(null);
 
-            ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 120;
+            //((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 120;
             this.Configuration.LazyLoadingEnabled = true;
         }
     }

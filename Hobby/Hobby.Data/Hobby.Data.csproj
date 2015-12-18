@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntitiesConfiguration\UserConfiguration.cs" />
     <Compile Include="Infrastructure\ModelEntitiesContext.cs" />
     <Compile Include="ModelEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
