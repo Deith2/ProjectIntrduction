@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hoobby.Web", "Hoobby.Web\Hoobby.Web.csproj", "{82F46666-6C4B-46F7-B9F7-41C6B2901255}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hobby.Web", "Hoobby.Web\Hobby.Web.csproj", "{82F46666-6C4B-46F7-B9F7-41C6B2901255}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{8D593809-FD03-415A-8B8E-DDF8ADA3BC18}"
 EndProject
@@ -19,6 +19,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hobby.UnitTests", "Hobby.UnitTests\Hobby.UnitTests.csproj", "{8960527F-469E-48DC-8551-64C218049138}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hobby.Data.Interface", "Hobby.Data.Interface\Hobby.Data.Interface.csproj", "{07ABA311-4374-4FD0-A420-48B8DBB1767E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hobby.SimpleInjector", "Hobby.SimpleInjector\Hobby.SimpleInjector.csproj", "{95E8DE34-04AA-44FF-879D-B4C3791533DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +48,10 @@ Global
 		{07ABA311-4374-4FD0-A420-48B8DBB1767E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07ABA311-4374-4FD0-A420-48B8DBB1767E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07ABA311-4374-4FD0-A420-48B8DBB1767E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95E8DE34-04AA-44FF-879D-B4C3791533DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E8DE34-04AA-44FF-879D-B4C3791533DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E8DE34-04AA-44FF-879D-B4C3791533DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E8DE34-04AA-44FF-879D-B4C3791533DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,5 +59,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{65397EC7-8120-4F84-9842-D06A161663CC} = {8D593809-FD03-415A-8B8E-DDF8ADA3BC18}
 		{B75623C0-0A0B-4F97-9325-BA1A31DFE7EC} = {8D593809-FD03-415A-8B8E-DDF8ADA3BC18}
+		{07ABA311-4374-4FD0-A420-48B8DBB1767E} = {8D593809-FD03-415A-8B8E-DDF8ADA3BC18}
 	EndGlobalSection
 EndGlobal

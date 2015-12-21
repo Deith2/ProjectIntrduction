@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Hoobby.Web
+namespace Hobby.Web
 {
     public class BundleConfig
     {
