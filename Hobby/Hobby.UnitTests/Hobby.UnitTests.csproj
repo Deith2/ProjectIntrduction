@@ -53,6 +53,10 @@
       <HintPath>..\packages\SimpleInjector.3.1.2\lib\net45\SimpleInjector.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SimpleInjector.Extensions.LifetimeScoping, Version=3.1.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Extensions.LifetimeScoping.3.1.2\lib\net40-client\SimpleInjector.Extensions.LifetimeScoping.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core">
@@ -72,6 +76,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SimpleInjectorConfigurationTests.cs" />
     <Compile Include="TestingTools\IoCCProvider.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,6 +86,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Hobby.Data.Interface\Hobby.Data.Interface.csproj">
+      <Project>{07aba311-4374-4fd0-a420-48b8dbb1767e}</Project>
+      <Name>Hobby.Data.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hobby.Data\Hobby.Data.csproj">
       <Project>{b75623c0-0a0b-4f97-9325-ba1a31dfe7ec}</Project>
       <Name>Hobby.Data</Name>

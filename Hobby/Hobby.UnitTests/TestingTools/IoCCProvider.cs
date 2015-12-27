@@ -17,7 +17,7 @@ namespace Hobby.UnitTests.TestingTools
             {
                 if (container == null)
                 {
-                    container = Hobby.SimpleInjector.SimpleInjectorWeb.Instance;
+                    container = Hobby.SimpleInjector.SimpleInjectorConsole.Instance;
                 }
 
                 return container;

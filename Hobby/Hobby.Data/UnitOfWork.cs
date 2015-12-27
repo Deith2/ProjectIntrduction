@@ -11,8 +11,9 @@ namespace Hobby.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
+        private readonly Dictionary<Type, object> _repositories = new Dictionary<Type, object>();
         private readonly ModelEntities _context;
-        private bool _dispose = false;
+        private bool _disposed = false;
 
         public UnitOfWork()
         {
@@ -26,7 +27,15 @@ namespace Hobby.Data
 
         protected IRepository<TEntity> GetRepository<TEntity>() where TEntity : class
         {
+            if (_repositories.Keys.Contains(typeof(TEntity)))
+            {
+                return _repositories[typeof(TEntity)] as IRepository<TEntity>;
+            }
+
             var repository = new GenericRepository<TEntity>(_context);
+
+            _repositories.Add(typeof(TEntity), repository);
+
             return repository;
         }
 
@@ -42,14 +51,14 @@ namespace Hobby.Data
 
         public virtual void Dispose(bool disposing)
         {
-            if (!_dispose)
+            if (!this._disposed)
             {
                 if (disposing)
                 {
                     _context.Dispose();
                 }
             }
-            _dispose = true;
+            this._disposed = true;
         }
     }
 }

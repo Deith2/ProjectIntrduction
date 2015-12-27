@@ -14,8 +14,6 @@
             SetContext();
         }
 
-        public IDbSet<User> Users { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // modelBuilder.Configurations.AddFromAssembly(Assembly.GetAssembly(GetType())); Current Assembly
@@ -30,7 +28,7 @@
             Database.SetInitializer<ModelEntities>(null);
 
             // ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 120;
-            this.Configuration.LazyLoadingEnabled = true;
+            //this.Configuration.LazyLoadingEnabled = true;
         }
     }
 }

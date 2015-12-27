@@ -8,17 +8,15 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Hobby.Data;
 using Hobby.Entities;
+using Hobby.UnitTests.TestingTools;
+using Hobby.Data.Interface;
+using SimpleInjector;
 
 namespace Hobby.UnitTests
 {
     [TestClass]
     public class UnitTest1
     {
-        private ModelEntities context;
-        public UnitTest1()
-        {
-            this.context = new ModelEntities();
-        }
         [TestMethod]
         public void TestMethod1()
         {
@@ -26,15 +24,25 @@ namespace Hobby.UnitTests
                 {
                     Login = "test2"
                 };
-            context.Users.Add(user);
-            context.SaveChanges();
+            //context.Users.Add(user);
+            //context.SaveChanges();
         }
 
         [TestMethod]
         public void TestMethod2()
         {
-            var test = context.Users.FirstOrDefault(p => p.Login.Contains("test"));
-            string test2 ="";
+            //var test = context.Users.FirstOrDefault(p => p.Login.Contains("test"));
+            using (SimpleInjector.SimpleInjectorConsole.Instance.BeginLifetimeScope())
+            {
+                var uow = IoCCProvider.Container.GetInstance<IUnitOfWork>();
+                var user = new User
+                {
+                    Login = "darek"
+                };
+                uow.Users.Add(user);
+                uow.Save();
+                string test2 = "";
+            }
         }
     }
 }

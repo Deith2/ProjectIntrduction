@@ -12,6 +12,7 @@ namespace Hobby.Data
     public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         internal ModelEntities _context { get; set; }
+
         internal virtual IDbSet<TEntity> DbSet
         {
             get
