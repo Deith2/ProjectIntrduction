@@ -32,8 +32,7 @@ namespace Hoobby.Web.App_Start
 //#error Register your services here (remove this line).
 
             // For instance:
-            // container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Scoped);
-            
+            // container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Scoped);           
         }
     }
 }

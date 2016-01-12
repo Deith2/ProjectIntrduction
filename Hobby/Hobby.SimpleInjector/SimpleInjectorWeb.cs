@@ -1,13 +1,12 @@
-﻿using Hobby.Data;
-using Hobby.Data.Interface;
-using SimpleInjector;
-using SimpleInjector.Extensions.LifetimeScoping;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-
+using Hobby.Data;
+using Hobby.Data.Interface;
+using SimpleInjector;
+using SimpleInjector.Extensions.LifetimeScoping;
 
 namespace Hobby.SimpleInjector
 {
@@ -19,7 +18,7 @@ namespace Hobby.SimpleInjector
         {
             get
             {
-                if(_instance == null)
+                if (_instance == null)
                 {
                     _instance = Initialize();
                 }
@@ -32,15 +31,13 @@ namespace Hobby.SimpleInjector
         {
             Container container = new Container();
 
-            
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
-            
-//#if DEBUG
-//            container.Verify();
-//#endif
+
+            //#if DEBUG
+            //            container.Verify();
+            //#endif
 
             return container;
         }
-
     }
 }

@@ -28,7 +28,7 @@
             Database.SetInitializer<ModelEntities>(null);
 
             // ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 120;
-            //this.Configuration.LazyLoadingEnabled = true;
+            // this.Configuration.LazyLoadingEnabled = true;
         }
     }
 }

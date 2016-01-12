@@ -1,19 +1,21 @@
-﻿using Hobby.Data.Interface;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Hobby.Data.Interface;
 
 namespace Hobby.Web.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IUnitOfWork _uow;
+
         public HomeController(IUnitOfWork uow)
         {
             _uow = uow;
         }
+
         public ActionResult Index()
         {
             var test = _uow.Users.Single(p => p.Id == 1);

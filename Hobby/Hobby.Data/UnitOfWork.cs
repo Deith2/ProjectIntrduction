@@ -1,10 +1,10 @@
-﻿using Hobby.Data.Interface;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hobby.Data;
+using Hobby.Data.Interface;
 using Hobby.Entities;
 
 namespace Hobby.Data
@@ -25,24 +25,11 @@ namespace Hobby.Data
             get { return GetRepository<User>(); }
         }
 
-        protected IRepository<TEntity> GetRepository<TEntity>() where TEntity : class
-        {
-            if (_repositories.Keys.Contains(typeof(TEntity)))
-            {
-                return _repositories[typeof(TEntity)] as IRepository<TEntity>;
-            }
-
-            var repository = new GenericRepository<TEntity>(_context);
-
-            _repositories.Add(typeof(TEntity), repository);
-
-            return repository;
-        }
-
         public void Save()
         {
             _context.SaveChanges();
         }
+
         public void Dispose()
         {
             Dispose(true);
@@ -58,7 +45,22 @@ namespace Hobby.Data
                     _context.Dispose();
                 }
             }
+
             this._disposed = true;
+        }
+
+        protected IRepository<TEntity> GetRepository<TEntity>() where TEntity : class
+        {
+            if (_repositories.Keys.Contains(typeof(TEntity)))
+            {
+                return _repositories[typeof(TEntity)] as IRepository<TEntity>;
+            }
+
+            var repository = new GenericRepository<TEntity>(_context);
+
+            _repositories.Add(typeof(TEntity), repository);
+
+            return repository;
         }
     }
 }

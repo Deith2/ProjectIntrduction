@@ -5,11 +5,11 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Hobby.Data;
+using Hobby.Data.Interface;
 using Hobby.Entities;
 using Hobby.UnitTests.TestingTools;
-using Hobby.Data.Interface;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimpleInjector;
 
 namespace Hobby.UnitTests
@@ -41,8 +41,8 @@ namespace Hobby.UnitTests
                 };
                 uow.Users.Add(user);
                 uow.Save();
-                string test2 = "";
-            }
+                string test2 = string.Empty;
+            }            
         }
     }
 }
