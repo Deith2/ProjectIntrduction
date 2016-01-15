@@ -5,9 +5,9 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Hobby.Data;
 using Hobby.Data.Interface;
-using Hobby.Entities;
+using Hobby.DTO;
+using Hobby.DTO.Mappings;
 using Hobby.UnitTests.TestingTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimpleInjector;
@@ -20,10 +20,11 @@ namespace Hobby.UnitTests
         [TestMethod]
         public void TestMethod1()
         {
-            User user = new User
+            UserDTO user = new UserDTO
                 {
                     Login = "test2"
                 };
+
             //context.Users.Add(user);
             //context.SaveChanges();
         }
@@ -35,12 +36,17 @@ namespace Hobby.UnitTests
             using (SimpleInjector.SimpleInjectorConsole.Instance.BeginLifetimeScope())
             {
                 var uow = IoCCProvider.Container.GetInstance<IUnitOfWork>();
-                var user = new User
+
+                var user = new UserDTO
                 {
                     Login = "darek"
                 };
-                uow.Users.Add(user);
+               
+                uow.Users.Add(user.Map());
                 uow.Save();
+
+                var test = uow.Users.Single(p => p.Id == 1);
+                
                 string test2 = string.Empty;
             }            
         }

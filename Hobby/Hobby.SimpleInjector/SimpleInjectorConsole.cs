@@ -34,8 +34,6 @@ namespace Hobby.SimpleInjector
             container.Options.DefaultScopedLifestyle = new LifetimeScopeLifestyle();
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
 
-            // container.Register<IUnitOfWork, UnitOfWork>();
-
 #if DEBUG
             container.Verify();
 #endif

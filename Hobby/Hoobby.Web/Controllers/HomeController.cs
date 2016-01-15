@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Hobby.Data.Interface;
+using Hobby.Services.Interfaces;
 
 namespace Hobby.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IUnitOfWork _uow;
+        private readonly IUserService _userService;
 
-        public HomeController(IUnitOfWork uow)
+        public HomeController(IUserService userService)
         {
-            _uow = uow;
+            _userService = userService;
         }
 
         public ActionResult Index()
         {
-            var test = _uow.Users.Single(p => p.Id == 1);
+            var test = _userService.User(1);
             return View();
         }
 

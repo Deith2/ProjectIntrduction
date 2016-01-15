@@ -17,7 +17,7 @@
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
     <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>a522d5f9</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>1c10422d</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,8 +28,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
-	<StyleCopEnabled>true</StyleCopEnabled>
-	<StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <StyleCopEnabled>true</StyleCopEnabled>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -93,9 +93,13 @@
       <Project>{07aba311-4374-4fd0-a420-48b8dbb1767e}</Project>
       <Name>Hobby.Data.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hobby.Data\Hobby.Data.csproj">
-      <Project>{b75623c0-0a0b-4f97-9325-ba1a31dfe7ec}</Project>
-      <Name>Hobby.Data</Name>
+    <ProjectReference Include="..\Hobby.DTO\Hobby.DTO.csproj">
+      <Project>{5c577129-ba13-4cbd-b833-d43ac271e988}</Project>
+      <Name>Hobby.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hobby.Entities.Interface\Hobby.Entities.Interface.csproj">
+      <Project>{d9c9e31c-c8aa-499a-91fe-d1520ff8dbc8}</Project>
+      <Name>Hobby.Entities.Interface</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hobby.Entities\Hobby.Entities.csproj">
       <Project>{65397ec7-8120-4f84-9842-d06a161663cc}</Project>
@@ -130,13 +134,13 @@
   </Choose>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets" Condition="Exists('..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets'))" />
   </Target>
+  <Import Project="..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets" Condition="Exists('..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

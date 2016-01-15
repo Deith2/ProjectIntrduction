@@ -5,7 +5,10 @@ using System.Reflection;
 using System.Text;
 using Hobby.Data;
 using Hobby.Data.Interface;
+using Hobby.Services;
+using Hobby.Services.Interfaces;
 using SimpleInjector;
+using SimpleInjector.Diagnostics;
 using SimpleInjector.Extensions.LifetimeScoping;
 
 namespace Hobby.SimpleInjector
@@ -31,8 +34,16 @@ namespace Hobby.SimpleInjector
         {
             Container container = new Container();
 
-            container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
+            //container.Options.DefaultScopedLifestyle = new LifetimeScopeLifestyle();
+            //container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
 
+            container.RegisterPerWebRequest<IUnitOfWork>(() => new UnitOfWork(new ModelEntities()));
+
+            container.RegisterPerWebRequest<IUserService, UserService>();
+
+            //Registration registration = container.GetRegistration(typeof(IUnitOfWork)).Registration;
+
+            //registration.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent, "OK");
             //#if DEBUG
             //            container.Verify();
             //#endif

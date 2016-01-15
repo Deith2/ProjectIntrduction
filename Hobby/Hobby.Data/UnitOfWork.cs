@@ -20,6 +20,11 @@ namespace Hobby.Data
             _context = new ModelEntities();
         }
 
+        public UnitOfWork(ModelEntities model)
+        {
+            _context = model;
+        }
+
         public IRepository<User> Users
         {
             get { return GetRepository<User>(); }
@@ -36,7 +41,7 @@ namespace Hobby.Data
             GC.SuppressFinalize(this);
         }
 
-        public virtual void Dispose(bool disposing)
+        protected virtual void Dispose(bool disposing)
         {
             if (!this._disposed)
             {

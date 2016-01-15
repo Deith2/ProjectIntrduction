@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Hobby.Entities.Interface;
 
-namespace Hobby.Entities
+namespace Hobby.DTO
 {
-    public class User : IEntity
+    public class UserDTO
     {
         public virtual decimal Id { get; set; }
 
         public virtual string Login { get; set; }
-
-        public virtual byte[] RowVersion { get; set; }
     }
 }
