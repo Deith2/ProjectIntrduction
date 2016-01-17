@@ -14,7 +14,8 @@ namespace Hobby.UnitTests
         [TestMethod]
         public void HobbyConsoleConfigurationTest()
         {
-            var instance = Hobby.SimpleInjector.SimpleInjectorConsole.Instance;
+            var container = Hobby.SimpleInjector.SimpleInjectorConsole.Instance;
+            container.Verify();
         }
 
         [TestMethod]
