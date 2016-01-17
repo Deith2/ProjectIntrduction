@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace Hobby.DTO
 {
-    public class UserDTO
+    public class SettingDTO
     {
         public virtual decimal Id { get; set; }
 
-        public virtual string Login { get; set; }
+        public decimal IdUser { get; set; }
 
-        public virtual DateTime? CreateDate { get; set; }
+        public virtual string Name { get; set; }
+
+        public virtual bool Value { get; set; }
+
+        public virtual DateTime CreateDate { get; set; }
 
         public virtual byte[] RowVersion { get; set; }
     }

@@ -10,6 +10,8 @@ namespace Hobby.Data.Interface
     {
         IRepository<User> Users { get; }
 
+        IRepository<Setting> Settings { get; }
+
         void Save();
     }
 }

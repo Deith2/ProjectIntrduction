@@ -18,7 +18,7 @@ namespace Hobby.UnitTests
         }
 
         [TestMethod]
-        public void HobbyWebAdminConfigurationTest()
+        public void HobbyWebConfigurationTest()
         {
             var container = Hobby.SimpleInjector.SimpleInjectorWeb.Instance;
             container.Verify();

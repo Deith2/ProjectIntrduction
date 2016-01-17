@@ -7,32 +7,27 @@ using System.Text;
 using System.Threading.Tasks;
 using Hobby.Entities;
 
-namespace Hobby.Data.ConfigurationEntities
-{   
-    public partial class UserConfiguration : EntityTypeConfiguration<User>
+namespace Hobby.Data.EntitiesConfiguration
+{
+    public partial class SettingConfiguration : EntityTypeConfiguration<Setting>
     {
-        public UserConfiguration()
+        public SettingConfiguration()
         {
-            ToTable("Users");
+            ToTable("Settings");
 
             Property(e => e.Id).HasPrecision(18, 0);
             Property(e => e.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(e => e.Login).IsRequired();
-
             Property(e => e.CreateDate)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+
+            Property(e => e.Name).IsRequired();
 
             Property(e => e.RowVersion)
                  .IsFixedLength()
                  .HasColumnType("timestamp")
                  .HasMaxLength(8)
                  .IsRowVersion();
-
-            HasMany(e => e.Settings)
-                .WithRequired(e => e.User)
-                .HasForeignKey(e => e.IdUser)
-                .WillCascadeOnDelete(false);
         }
     }
 }

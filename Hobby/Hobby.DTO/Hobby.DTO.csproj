@@ -42,19 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mappings\UserMappings.cs" />
+    <Compile Include="SettingDTO.cs" />
     <Compile Include="UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Hobby.Entities.Interface\Hobby.Entities.Interface.csproj">
-      <Project>{d9c9e31c-c8aa-499a-91fe-d1520ff8dbc8}</Project>
-      <Name>Hobby.Entities.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hobby.Entities\Hobby.Entities.csproj">
-      <Project>{65397ec7-8120-4f84-9842-d06a161663cc}</Project>
-      <Name>Hobby.Entities</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

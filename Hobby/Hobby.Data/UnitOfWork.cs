@@ -18,16 +18,16 @@ namespace Hobby.Data
         public UnitOfWork()
         {
             _context = new ModelEntities();
-        }
-
-        public UnitOfWork(ModelEntities model)
-        {
-            _context = model;
-        }
+        }      
 
         public IRepository<User> Users
         {
             get { return GetRepository<User>(); }
+        }
+
+        public IRepository<Setting> Settings
+        {
+            get { return GetRepository<Setting>(); }
         }
 
         public void Save()

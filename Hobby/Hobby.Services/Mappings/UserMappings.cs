@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hobby.DTO;
 
-namespace Hobby.DTO.Mappings
+namespace Hobby.Services.Mappings
 {
     public static class UserMappings
     {
@@ -15,6 +16,7 @@ namespace Hobby.DTO.Mappings
 
             target.Id = source.Id;
             target.Login = source.Login;
+            target.RowVersion = source.RowVersion;
 
             return target;
         }

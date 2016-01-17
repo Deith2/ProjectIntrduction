@@ -37,7 +37,7 @@ namespace Hobby.SimpleInjector
             //container.Options.DefaultScopedLifestyle = new LifetimeScopeLifestyle();
             //container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
 
-            container.RegisterPerWebRequest<IUnitOfWork>(() => new UnitOfWork(new ModelEntities()));
+            container.RegisterPerWebRequest<IUnitOfWork>(() => new UnitOfWork());
 
             container.RegisterPerWebRequest<IUserService, UserService>();
 

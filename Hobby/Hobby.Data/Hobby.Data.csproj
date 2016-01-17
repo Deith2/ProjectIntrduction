@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntitiesConfiguration\SettingConfiguration.cs" />
     <Compile Include="EntitiesConfiguration\UserConfiguration.cs" />
     <Compile Include="GenericRepository.cs" />
     <Compile Include="ModelEntities.cs" />
@@ -65,6 +66,10 @@
     <ProjectReference Include="..\Hobby.Data.Interface\Hobby.Data.Interface.csproj">
       <Project>{07aba311-4374-4fd0-a420-48b8dbb1767e}</Project>
       <Name>Hobby.Data.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hobby.DTO\Hobby.DTO.csproj">
+      <Project>{5c577129-ba13-4cbd-b833-d43ac271e988}</Project>
+      <Name>Hobby.DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hobby.Entities.Interface\Hobby.Entities.Interface.csproj">
       <Project>{d9c9e31c-c8aa-499a-91fe-d1520ff8dbc8}</Project>

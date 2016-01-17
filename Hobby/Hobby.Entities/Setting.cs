@@ -8,8 +8,8 @@ using Hobby.Entities.Interface;
 
 namespace Hobby.Entities
 {
-    public class User : UserDTO, IEntity
+    public class Setting : SettingDTO, IEntity
     {
-        public virtual ICollection<Setting> Settings { get; set; }
+        public virtual User User { get; set; }
     }
 }

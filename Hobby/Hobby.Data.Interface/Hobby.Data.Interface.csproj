@@ -50,6 +50,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Hobby.DTO\Hobby.DTO.csproj">
+      <Project>{5c577129-ba13-4cbd-b833-d43ac271e988}</Project>
+      <Name>Hobby.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hobby.Entities.Interface\Hobby.Entities.Interface.csproj">
       <Project>{d9c9e31c-c8aa-499a-91fe-d1520ff8dbc8}</Project>
       <Name>Hobby.Entities.Interface</Name>

@@ -65,6 +65,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -81,7 +82,8 @@
   <ItemGroup>
     <Compile Include="SimpleInjectorConfigurationTests.cs" />
     <Compile Include="TestingTools\IoCCProvider.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="TestingTools\TestsOwner.cs" />
+    <Compile Include="FirstTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +106,10 @@
     <ProjectReference Include="..\Hobby.Entities\Hobby.Entities.csproj">
       <Project>{65397ec7-8120-4f84-9842-d06a161663cc}</Project>
       <Name>Hobby.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hobby.Services\Hobby.Services.csproj">
+      <Project>{825019ef-09a0-477e-b500-b2b0562b59b8}</Project>
+      <Name>Hobby.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hobby.SimpleInjector\Hobby.SimpleInjector.csproj">
       <Project>{95e8de34-04aa-44ff-879d-b4c3791533dd}</Project>
