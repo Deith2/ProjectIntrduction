@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Hobby.DTO
 {
-    public class SettingDTO
+    public class UserPermissionDTO
     {
-        public virtual decimal Id { get; set; }
+        public decimal Id { get; set; }
 
         public virtual decimal IdUser { get; set; }
 
-        public virtual string Name { get; set; }
+        public virtual decimal IdPermission { get; set; }
 
-        public virtual bool Value { get; set; }
+        public virtual decimal IdCategorie { get; set; }
 
         public virtual DateTime? CreateDate { get; set; }
 

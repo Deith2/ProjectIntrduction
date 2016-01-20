@@ -1,27 +1,28 @@
-﻿using System;
+﻿using Hobby.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Hobby.Entities;
 
-namespace Hobby.Data.ConfigurationEntities
-{   
-    public partial class UserConfiguration : EntityTypeConfiguration<User>
+namespace Hobby.Data.EntitiesConfiguration
+{
+    public partial class PermissionConfiguration : EntityTypeConfiguration<Permission>
     {
-        public UserConfiguration()
+        public PermissionConfiguration()
         {
-            ToTable("Users");
+            ToTable("Permissions");
 
             Property(e => e.Id).HasPrecision(18, 0);
             Property(e => e.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(e => e.Login).IsRequired();
+            Property(e => e.Name).IsRequired();
+            Property(e => e.Active).IsRequired();
 
             Property(e => e.CreateDate)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+               .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
 
             Property(e => e.RowVersion)
                  .IsFixedLength()
@@ -29,13 +30,8 @@ namespace Hobby.Data.ConfigurationEntities
                  .HasMaxLength(8)
                  .IsRowVersion();
 
-            HasMany(e => e.Settings)
-                .WithRequired(e => e.User)
-                .HasForeignKey(e => e.IdUser)
-                .WillCascadeOnDelete(false);
-
             HasMany(e => e.UserPermissions)
-               .WithRequired(e => e.User)
+               .WithRequired(e => e.Permission)
                .HasForeignKey(e => e.IdPermission)
                .WillCascadeOnDelete(false);
         }

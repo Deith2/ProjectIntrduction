@@ -8,6 +8,10 @@ namespace Hobby.Entities.Interface
 {
     public interface IEntity
     {
-       decimal Id { get; set; }
+        decimal Id { get; set; }
+
+        DateTime? CreateDate { get; set; }
+
+        byte[] RowVersion { get; set; }
     }
 }

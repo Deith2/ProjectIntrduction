@@ -16,7 +16,7 @@ namespace Hobby.Services.Mappings
 
             target.Id = source.Id;
             target.Login = source.Login;
-            target.RowVersion = source.RowVersion;
+            target.Password = source.Password;
 
             return target;
         }
@@ -26,6 +26,7 @@ namespace Hobby.Services.Mappings
             UserDTO target = new UserDTO();
             target.Id = source.Id;
             target.Login = source.Login;
+            target.Password = source.Password;
 
             return target;
         }

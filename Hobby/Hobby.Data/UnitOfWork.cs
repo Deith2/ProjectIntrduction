@@ -30,6 +30,21 @@ namespace Hobby.Data
             get { return GetRepository<Setting>(); }
         }
 
+        public IRepository<Categorie> Categories  
+        {
+            get { return GetRepository<Categorie>(); }
+        }
+
+        public IRepository<Permission> Permissions
+        {
+            get { return GetRepository<Permission>(); }
+        }
+
+        public IRepository<UserPermission> UserPermissions
+        {
+            get { return GetRepository<UserPermission>(); }
+        }
+
         public void Save()
         {
             _context.SaveChanges();

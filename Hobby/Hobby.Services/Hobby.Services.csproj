@@ -42,8 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mappings\CategorieMappings.cs" />
+    <Compile Include="Mappings\PermissionMappings.cs" />
     <Compile Include="Mappings\SettingMappings.cs" />
     <Compile Include="Mappings\UserMappings.cs" />
+    <Compile Include="Mappings\UserPermissionMappings.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

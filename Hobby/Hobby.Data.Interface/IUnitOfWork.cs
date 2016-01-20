@@ -12,6 +12,12 @@ namespace Hobby.Data.Interface
 
         IRepository<Setting> Settings { get; }
 
+        IRepository<Categorie> Categories { get; }
+
+        IRepository<Permission> Permissions { get; }
+
+        IRepository<UserPermission> UserPermissions { get; }
+
         void Save();
     }
 }

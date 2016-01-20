@@ -1,16 +1,17 @@
-﻿namespace Hobby.Data
-{
-    using System;
-    using System.Data.Entity;
-    using System.Reflection;
-    using Hobby.Data.ConfigurationEntities;
-    using Hobby.Entities;
+﻿using System;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Reflection;
+using Hobby.Data.ConfigurationEntities;
+using Hobby.Entities;
 
+namespace Hobby.Data
+{
     public class ModelEntities : DbContext
     {
         public ModelEntities()
             : base("HobbyDev")
-        {           
+        {
             SetContext();
         }
 
@@ -20,15 +21,16 @@
             // base.OnModelCreating(modelBuilder);
             // modelBuilder.Configurations.Add(new UserConfiguration());Pojedyncze dodanie
             // base.OnModelCreating(modelBuilder);
-            modelBuilder.Configurations.AddFromAssembly(typeof(ModelEntities).Assembly);           
+            modelBuilder.Configurations.AddFromAssembly(typeof(ModelEntities).Assembly);
         }
 
         private void SetContext()
         {
             Database.SetInitializer<ModelEntities>(null);
 
-            // ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 120;
-             this.Configuration.LazyLoadingEnabled = true;
+            ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 120;
+            this.Configuration.LazyLoadingEnabled = true;
+            this.Configuration.ProxyCreationEnabled = false;
         }
     }
 }

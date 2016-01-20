@@ -28,7 +28,8 @@ namespace Hobby.UnitTests
 
                 var user = new UserDTO
                 {
-                    Login = "darek3"
+                    Login = "darek3",
+                    Password = "2"
                 };
 
                 uow.Users.Add(user.Map());
@@ -41,7 +42,7 @@ namespace Hobby.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(DbUpdateException))]   
+        [ExpectedException(typeof(DbUpdateException))]
         public void TestRelations()
         {
             using (SimpleInjector.SimpleInjectorConsole.Instance.BeginLifetimeScope())
@@ -56,7 +57,52 @@ namespace Hobby.UnitTests
                 };
 
                 uow.Settings.Add(setting.Map());
-                uow.Save();                
+                uow.Save();
+            }
+        }
+
+        [TestMethod]
+        public void TestUserPermissions()
+        {
+            using (SimpleInjector.SimpleInjectorConsole.Instance.BeginLifetimeScope())
+            {
+                var uow = IoCCProvider.Container.GetInstance<IUnitOfWork>();
+
+                var categorie = new CategorieDTO
+                {
+                    Name = "testCategorie1"
+                };
+
+                var permissions = new PermissionDTO
+                {
+                    Name = "testPermission1",
+                    Active = true,
+                    Description = "TEST"
+                };
+
+                var user = new UserDTO
+                {
+                    Login = "testlogin1",
+                    Password = "test"
+                };
+                //Trzeba przypsiac do obiektu
+                var entityCat = categorie.Map();
+                var entityPer = permissions.Map();
+                var entityUse = user.Map();
+                   
+                uow.Categories.Add(entityCat);
+                uow.Permissions.Add(entityPer);
+                uow.Users.Add(entityUse);
+                uow.Save();               
+
+                var userPermission = new UserPermissionDTO()
+                {
+                    IdCategorie = entityCat.Id,
+                    IdPermission = entityPer.Id,
+                    IdUser = entityUse.Id
+                };
+                uow.UserPermissions.Add(userPermission.Map());
+                uow.Save();
             }
         }
     }
