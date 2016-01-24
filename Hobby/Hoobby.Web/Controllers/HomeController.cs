@@ -18,7 +18,7 @@ namespace Hobby.Web.Controllers
 
         public ActionResult Index()
         {
-            var test = _userService.User(1);
+            var test = _userService.UserTake(1);
             return View();
         }
 

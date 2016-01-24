@@ -14,7 +14,11 @@ namespace Hobby.Data.Interface
 
         TEntity Single(Expression<Func<TEntity, bool>> filter);
 
+        TEntity SingleAsNoTracking(Expression<Func<TEntity, bool>> filter);
+
         TEntity FirstOrDefault(Expression<Func<TEntity, bool>> filter);
+
+        TEntity FirstOrDefaultAsNoTracking(Expression<Func<TEntity, bool>> filter);
 
         bool Any();
 
@@ -22,6 +26,10 @@ namespace Hobby.Data.Interface
 
         IQueryable<TEntity> All();
 
+        IQueryable<TEntity> AllAsNoTracking();
+
         IQueryable<TEntity> All(Expression<Func<TEntity, bool>> filter);
+
+        IQueryable<TEntity> AllAsNoTracking(Expression<Func<TEntity, bool>> filter);
     }
 }

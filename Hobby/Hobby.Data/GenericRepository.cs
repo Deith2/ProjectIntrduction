@@ -41,9 +41,19 @@ namespace Hobby.Data
             return DbSet.Where(filter).Single();
         }
 
+        public virtual TEntity SingleAsNoTracking(Expression<Func<TEntity, bool>> filter)
+        {
+            return DbSet.AsNoTracking().Where(filter).Single();
+        }
+
         public virtual TEntity FirstOrDefault(Expression<Func<TEntity, bool>> filter)
         {
             return DbSet.Where(filter).FirstOrDefault();
+        }
+
+        public virtual TEntity FirstOrDefaultAsNoTracking(Expression<Func<TEntity, bool>> filter)
+        {
+            return DbSet.AsNoTracking().Where(filter).FirstOrDefault();
         }
 
         public virtual bool Any()
@@ -61,9 +71,19 @@ namespace Hobby.Data
             return DbSet.AsQueryable();
         }
 
+        public virtual IQueryable<TEntity> AllAsNoTracking()
+        {
+            return DbSet.AsNoTracking().AsQueryable();
+        }
+
         public virtual IQueryable<TEntity> All(Expression<Func<TEntity, bool>> filter)
         {
             return DbSet.Where(filter);
+        }
+
+        public virtual IQueryable<TEntity> AllAsNoTracking(Expression<Func<TEntity, bool>> filter)
+        {
+            return DbSet.AsNoTracking().Where(filter);
         }
 
         public void Dispose()

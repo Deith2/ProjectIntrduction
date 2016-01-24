@@ -9,6 +9,8 @@ namespace Hobby.Services.Interfaces
 {
     public interface IUserService
     {
-        List<UserDTO> User(decimal id);
+        List<UserDTO> UserTake(decimal id);
+
+        UserDTO test();
     }
 }

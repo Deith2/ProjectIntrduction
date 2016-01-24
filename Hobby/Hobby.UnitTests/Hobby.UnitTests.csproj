@@ -52,6 +52,22 @@
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="Moq, Version=4.0.10827.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.MockingKernel, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MockingKernel.3.2.0.0\lib\net45-full\Ninject.MockingKernel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.MockingKernel.Moq, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MockingKernel.Moq.3.2.2.0\lib\net45-full\Ninject.MockingKernel.Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SimpleInjector, Version=3.1.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.3.1.2\lib\net45\SimpleInjector.dll</HintPath>
       <Private>True</Private>
@@ -80,10 +96,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="NinjectFirstTests.cs" />
     <Compile Include="SimpleInjectorConfigurationTests.cs" />
     <Compile Include="TestingTools\IoCCProvider.cs" />
+    <Compile Include="TestingTools\IoCNinjectProvider.cs" />
     <Compile Include="TestingTools\TestsOwner.cs" />
-    <Compile Include="FirstTests.cs" />
+    <Compile Include="SImpleInjectorFirstTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +124,14 @@
     <ProjectReference Include="..\Hobby.Entities\Hobby.Entities.csproj">
       <Project>{65397ec7-8120-4f84-9842-d06a161663cc}</Project>
       <Name>Hobby.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hobby.Ninject\Hobby.Ninject.csproj">
+      <Project>{48539130-7d8f-4868-93f1-788b60c265f5}</Project>
+      <Name>Hobby.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hobby.Services.Interfaces\Hobby.Services.Interfaces.csproj">
+      <Project>{172ace68-4e52-4c9b-ac5d-3fa1b16634cd}</Project>
+      <Name>Hobby.Services.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hobby.Services\Hobby.Services.csproj">
       <Project>{825019ef-09a0-477e-b500-b2b0562b59b8}</Project>

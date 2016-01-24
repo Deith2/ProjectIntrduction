@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SimpleInjector;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -7,16 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Hobby.Data.Interface;
 using Hobby.DTO;
+using Hobby.Ninject;
+using Hobby.Services.Interfaces;
 using Hobby.Services.Mappings;
 using Hobby.UnitTests.TestingTools;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SimpleInjector;
+using Ninject;
 
 namespace Hobby.UnitTests
 {
     [TestsOwner("dlukasik")]
     [TestClass]
-    public class FirstTests
+    public class SImpleInjectorFirstTests
     {
         [TestMethod]
         public void TestMapping()

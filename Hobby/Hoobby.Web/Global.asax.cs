@@ -18,7 +18,7 @@ namespace Hobby.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            SimpleInjectorInitializer.Initialize();
+            //SimpleInjectorInitializer.Initialize();
         }
     }
 }

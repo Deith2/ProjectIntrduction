@@ -69,6 +69,11 @@ namespace Hobby.Data
             this._disposed = true;
         }
 
+        ~UnitOfWork()
+        {
+            Dispose(false);
+        }
+
         protected IRepository<TEntity> GetRepository<TEntity>() where TEntity : class
         {
             if (_repositories.Keys.Contains(typeof(TEntity)))
