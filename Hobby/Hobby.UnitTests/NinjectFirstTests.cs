@@ -3,6 +3,7 @@ using Hobby.DTO;
 using Hobby.Services.Interfaces;
 using Hobby.Services.Mappings;
 using Hobby.UnitTests.TestingTools;
+using Hobby.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -28,8 +29,12 @@ namespace Hobby.UnitTests
                 Password = "2"
             };
 
-            uow.Users.Add(user.Map());
+            user.Password = user.getSHA1();
+            var entity = user.Map();
+            uow.Users.Add(entity);
             uow.Save();
+
+            Assert.IsNotNull(entity.Id);
         }
 
         [TestMethod]
@@ -38,6 +43,8 @@ namespace Hobby.UnitTests
             var _userService = IoCNinjectProvider.Instance.Get<IUserService>();
 
             var dto = _userService.test();
+
+            Assert.IsNotNull(dto);
         }
     }
 }

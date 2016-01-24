@@ -141,6 +141,10 @@
       <Project>{95e8de34-04aa-44ff-879d-b4c3791533dd}</Project>
       <Name>Hobby.SimpleInjector</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Hobby.Utilities\Hobby.Utilities.csproj">
+      <Project>{dbd1b82f-286d-404d-96e1-166ca7b41f78}</Project>
+      <Name>Hobby.Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hoobby.Web\Hobby.Web.csproj">
       <Project>{82f46666-6c4b-46f7-b9f7-41c6b2901255}</Project>
       <Name>Hobby.Web</Name>

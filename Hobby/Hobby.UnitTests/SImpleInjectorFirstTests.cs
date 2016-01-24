@@ -40,7 +40,7 @@ namespace Hobby.UnitTests
 
                 var test = uow.Users.Single(p => p.Id == 1);
 
-                string test2 = string.Empty;
+                Assert.IsNull(user.Id);
             }
         }
 
@@ -61,6 +61,8 @@ namespace Hobby.UnitTests
 
                 uow.Settings.Add(setting.Map());
                 uow.Save();
+
+                Assert.IsNull(setting.Id);
             }
         }
 
