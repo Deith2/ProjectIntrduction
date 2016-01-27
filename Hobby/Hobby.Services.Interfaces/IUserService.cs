@@ -11,6 +11,10 @@ namespace Hobby.Services.Interfaces
     {
         List<UserDTO> UserTake(decimal id);
 
-        UserDTO test();
+        UserDTO CheckUser(string login, string password);
+
+        List<string> PermissionActiveNameList(decimal idUser);
+
+        decimal IdPermissionByName(string role);
     }
 }

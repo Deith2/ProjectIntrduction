@@ -13,7 +13,5 @@ namespace Hobby.Entities
         public virtual Permission Permission { get; set; }
 
         public virtual User User { get; set; }
-
-        public virtual Categorie Categorie { get; set; }
     }
 }

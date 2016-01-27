@@ -8,6 +8,7 @@ using Hobby.DTO;
 using Hobby.Entities;
 using Hobby.Services.Interfaces;
 using Hobby.Services.Mappings;
+using Hobby.Utilities;
 
 namespace Hobby.Services
 {
@@ -23,17 +24,47 @@ namespace Hobby.Services
         public List<UserDTO> UserTake(decimal id)
         {
             var test = _uow.Users.All().ToList().MapList();
-            var z = _uow.Users.FirstOrDefault(p => p.Login == "darek");
-            var c = _uow.Users.Single(p => p.Id == 3);
-            var x = _uow.Users.GetById(3);
+            //var z = _uow.Users.FirstOrDefault(p => p.Login == "darek");
+            //var c = _uow.Users.Single(p => p.Id == 3);
+            //var x = _uow.Users.GetById(3);
             return test;
         }
 
-        public UserDTO test()
+        public UserDTO CheckUser(string login, string password)
         {
-            User test = _uow.Users.Single(P => P.Id == 1);
+            var passwordSHA = password.getSHA1();
+            var entity = _uow.Users.FirstOrDefaultAsNoTracking(p => p.Login == login && p.Password == passwordSHA);
 
-            return test.Map();
+            if (entity != null)
+            {
+                return entity.Map();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public List<string> PermissionActiveNameList(decimal idUser)
+        {
+            List<string> permissionActiveList = new List<string>();
+
+            var entity = _uow.UserPermissions.AllAsNoTracking(p => p.IdUser == idUser).Select(p => p.IdPermission);
+            foreach (var idPermission in entity)
+            {
+                var getActivePermission = _uow.Permissions.FirstOrDefaultAsNoTracking(p => p.Id == idPermission && p.Active == true);
+                if (getActivePermission != null)
+                {
+                    permissionActiveList.Add(getActivePermission.Name);
+                }
+            }
+
+            return permissionActiveList;
+        }
+
+        public decimal IdPermissionByName(string role)
+        {
+            return _uow.Permissions.FirstOrDefault(p => p.Name == role).Id;
         }
     }
 }

@@ -91,18 +91,15 @@ namespace Hobby.UnitTests
                     Password = "test"
                 };
                 //Trzeba przypsiac do obiektu
-                var entityCat = categorie.Map();
                 var entityPer = permissions.Map();
                 var entityUse = user.Map();
                    
-                uow.Categories.Add(entityCat);
                 uow.Permissions.Add(entityPer);
                 uow.Users.Add(entityUse);
                 uow.Save();               
 
                 var userPermission = new UserPermissionDTO()
                 {
-                    IdCategorie = entityCat.Id,
                     IdPermission = entityPer.Id,
                     IdUser = entityUse.Id
                 };

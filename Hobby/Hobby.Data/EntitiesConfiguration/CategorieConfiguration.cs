@@ -28,11 +28,6 @@ namespace Hobby.Data.EntitiesConfiguration
                  .HasColumnType("timestamp")
                  .HasMaxLength(8)
                  .IsRowVersion();
-
-            HasMany(e => e.UserPermissions)
-               .WithRequired(e => e.Categorie)
-               .HasForeignKey(e => e.IdCategorie)
-               .WillCascadeOnDelete(false);
         }
     }
 }

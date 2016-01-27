@@ -15,7 +15,6 @@ namespace Hobby.Services.Mappings
             var target = new UserPermissionDTO();
 
             target.Id = source.Id;
-            target.IdCategorie = source.IdCategorie;
             target.IdPermission = source.IdPermission;
             target.IdUser = source.IdUser;
 
@@ -27,7 +26,6 @@ namespace Hobby.Services.Mappings
             var target = new UserPermission();
 
             target.Id = source.Id;
-            target.IdCategorie = source.IdCategorie;
             target.IdPermission = source.IdPermission;
             target.IdUser = source.IdUser;
 

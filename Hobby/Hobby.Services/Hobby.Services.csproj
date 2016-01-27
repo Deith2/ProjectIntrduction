@@ -71,6 +71,10 @@
       <Project>{172ace68-4e52-4c9b-ac5d-3fa1b16634cd}</Project>
       <Name>Hobby.Services.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Hobby.Utilities\Hobby.Utilities.csproj">
+      <Project>{dbd1b82f-286d-404d-96e1-166ca7b41f78}</Project>
+      <Name>Hobby.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

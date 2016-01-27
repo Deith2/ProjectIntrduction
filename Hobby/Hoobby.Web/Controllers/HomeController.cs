@@ -4,10 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Hobby.Services.Interfaces;
+using Hobby.Web.Authorize;
+using Hobby.Web.Controllers;
 
 namespace Hobby.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly IUserService _userService;
 
@@ -16,12 +18,25 @@ namespace Hobby.Web.Controllers
             _userService = userService;
         }
 
+        [CustomAuthorize(Roles = "Admin")]
         public ActionResult Index()
         {
-            var test = _userService.UserTake(1);
-            return View();
+            if (User != null)
+            {
+                ViewBag.user = User.Identity.IsAuthenticated;
+                ViewBag.user1 = User.Login;
+                ViewBag.user2 = User.Email;
+                ViewBag.user3 = User.UserId;
+                ViewBag.user4 = User.roles.Count;
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Account");                
+            }
         }
 
+        [CustomAuthorize(Users = "darek4")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

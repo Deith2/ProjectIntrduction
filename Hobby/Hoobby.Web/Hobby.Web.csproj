@@ -159,7 +159,13 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
+    <Compile Include="Authorize\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Authorize\CustomPrincipal.cs" />
+    <Compile Include="Authorize\CustomPrincipalSerializeModel.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -214,10 +220,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -239,6 +246,10 @@
     <ProjectReference Include="..\Hobby.SimpleInjector\Hobby.SimpleInjector.csproj">
       <Project>{95e8de34-04aa-44ff-879d-b4c3791533dd}</Project>
       <Name>Hobby.SimpleInjector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hobby.Utilities\Hobby.Utilities.csproj">
+      <Project>{dbd1b82f-286d-404d-96e1-166ca7b41f78}</Project>
+      <Name>Hobby.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

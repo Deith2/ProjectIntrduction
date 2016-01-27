@@ -10,6 +10,5 @@ namespace Hobby.Entities
 {
     public class Categorie : CategorieDTO, IEntity
     {
-        public ICollection<UserPermission> UserPermissions { get; set; }
     }
 }

@@ -17,6 +17,7 @@ namespace Hobby.Services.Mappings
             target.Id = source.Id;
             target.Login = source.Login;
             target.Password = source.Password;
+            target.Email = source.Email;
 
             return target;
         }
@@ -27,6 +28,7 @@ namespace Hobby.Services.Mappings
             target.Id = source.Id;
             target.Login = source.Login;
             target.Password = source.Password;
+            target.Email = source.Email;
 
             return target;
         }

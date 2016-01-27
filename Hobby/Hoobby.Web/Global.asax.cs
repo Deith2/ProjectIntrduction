@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Hobby.Web.App_Start;
+using System.Web.Security;
+using Hobby.Web.Authorize;
+using Newtonsoft.Json;
 
 namespace Hobby.Web
 {
@@ -19,6 +22,25 @@ namespace Hobby.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             //SimpleInjectorInitializer.Initialize();
+        }
+
+        protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
+        {
+            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+
+            if (authCookie != null)
+            {
+                FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+
+                CustomPrincipalSerializeModel serializeModel = JsonConvert.DeserializeObject<CustomPrincipalSerializeModel>(authTicket.UserData);
+                CustomPrincipal newUser = new CustomPrincipal(authTicket.Name);
+                newUser.UserId = serializeModel.UserId;
+                newUser.Email = serializeModel.Email;
+                newUser.Login = serializeModel.Login;
+                newUser.roles = serializeModel.roles;
+
+                HttpContext.Current.User = newUser;
+            }
         }
     }
 }

@@ -18,7 +18,6 @@ namespace Hobby.Data.EntitiesConfiguration
             Property(e => e.Id).HasPrecision(18, 0);
             Property(e => e.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(e => e.IdCategorie).IsRequired();
             Property(e => e.IdPermission).IsRequired();
             Property(e => e.IdUser).IsRequired();
 

@@ -20,6 +20,8 @@ namespace Hobby.Data.ConfigurationEntities
 
             Property(e => e.Login).IsRequired();
 
+            Property(e => e.Email).IsRequired();
+
             Property(e => e.CreateDate)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
 

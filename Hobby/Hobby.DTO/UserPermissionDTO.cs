@@ -14,8 +14,6 @@ namespace Hobby.DTO
 
         public virtual decimal IdPermission { get; set; }
 
-        public virtual decimal IdCategorie { get; set; }
-
         public virtual DateTime? CreateDate { get; set; }
 
         public virtual byte[] RowVersion { get; set; }
