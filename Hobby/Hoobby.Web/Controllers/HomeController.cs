@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Hobby.DomainEvents;
+using Hobby.DomainEvents.Events;
 using Hobby.Services.Interfaces;
 using Hobby.Web.Authorize;
 using Hobby.Web.Controllers;
@@ -21,6 +23,9 @@ namespace Hobby.Web.Controllers
         [CustomAuthorize(Roles = "Admin")]
         public ActionResult Index()
         {
+            var survey = new Hobby.DomainEvents.Domain.Survey();
+            survey.EndSurvey();
+
             if (User != null)
             {
                 ViewBag.user = User.Identity.IsAuthenticated;
@@ -40,7 +45,9 @@ namespace Hobby.Web.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
+            var id = 1;
+            var email = "test@test.pl";
+            DomainEvent.Raise(new ActivateEmailNewUserEvent() { idUser = id, Email = email });
             return View();
         }
 

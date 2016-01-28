@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{48539130-7D8F-4868-93F1-788B60C265F5}</ProjectGuid>
+    <ProjectGuid>{4C627D69-93A0-40CA-BE9E-DEF860B8EFF7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Hobby.Ninject</RootNamespace>
-    <AssemblyName>Hobby.Ninject</AssemblyName>
+    <RootNamespace>Hobby.DomainEvents.Handler</RootNamespace>
+    <AssemblyName>Hobby.DomainEvents.Handler</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,39 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleImplementation.cs" />
-    <Compile Include="NinjectConsole.cs" />
-    <Compile Include="NinjectEventContainer.cs" />
-    <Compile Include="NinjectWeb.cs" />
+    <Compile Include="ActivateEmailNewUserHandler.cs" />
+    <Compile Include="EmailModel\EmailOrderProcessor.cs" />
+    <Compile Include="EmailModel\EmailSettings.cs" />
+    <Compile Include="EndOfSurveyHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Hobby.Data.Interface\Hobby.Data.Interface.csproj">
-      <Project>{07aba311-4374-4fd0-a420-48b8dbb1767e}</Project>
-      <Name>Hobby.Data.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hobby.Data\Hobby.Data.csproj">
-      <Project>{b75623c0-0a0b-4f97-9325-ba1a31dfe7ec}</Project>
-      <Name>Hobby.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hobby.DomainEvents.Handler\Hobby.DomainEvents.Handler.csproj">
-      <Project>{4c627d69-93a0-40ca-be9e-def860b8eff7}</Project>
-      <Name>Hobby.DomainEvents.Handler</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Hobby.DomainEvents\Hobby.DomainEvents.csproj">
       <Project>{a96c0d95-8f0c-444b-8460-1dfca6fc7796}</Project>
       <Name>Hobby.DomainEvents</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hobby.Services.Interfaces\Hobby.Services.Interfaces.csproj">
-      <Project>{172ace68-4e52-4c9b-ac5d-3fa1b16634cd}</Project>
-      <Name>Hobby.Services.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hobby.Services\Hobby.Services.csproj">
-      <Project>{825019ef-09a0-477e-b500-b2b0562b59b8}</Project>
-      <Name>Hobby.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

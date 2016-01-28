@@ -231,6 +231,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Hobby.DomainEvents\Hobby.DomainEvents.csproj">
+      <Project>{a96c0d95-8f0c-444b-8460-1dfca6fc7796}</Project>
+      <Name>Hobby.DomainEvents</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hobby.DTO\Hobby.DTO.csproj">
       <Project>{5c577129-ba13-4cbd-b833-d43ac271e988}</Project>
       <Name>Hobby.DTO</Name>
