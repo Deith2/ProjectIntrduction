@@ -159,7 +159,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
-    <Compile Include="Authorize\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Authorize\HobbyAuthorizeAttribute.cs" />
     <Compile Include="Authorize\CustomPrincipal.cs" />
     <Compile Include="Authorize\CustomPrincipalSerializeModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />

@@ -20,7 +20,7 @@ namespace Hobby.Web.Controllers
             _userService = userService;
         }
 
-        [CustomAuthorize(Roles = "Admin")]
+        [HobbyAuthorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var survey = new Hobby.DomainEvents.Domain.Survey();
@@ -41,7 +41,7 @@ namespace Hobby.Web.Controllers
             }
         }
 
-        [CustomAuthorize(Users = "darek4")]
+        [HobbyAuthorize(Users = "darek4")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

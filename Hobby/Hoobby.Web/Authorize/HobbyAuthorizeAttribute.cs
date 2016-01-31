@@ -7,7 +7,7 @@ using System.Web.Routing;
 
 namespace Hobby.Web.Authorize
 {
-    public class CustomAuthorizeAttribute : AuthorizeAttribute
+    public class HobbyAuthorizeAttribute : AuthorizeAttribute
     {
         protected virtual CustomPrincipal CurrentUser
         {
