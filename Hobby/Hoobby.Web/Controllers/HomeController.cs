@@ -8,12 +8,15 @@ using Hobby.DomainEvents.Events;
 using Hobby.Services.Interfaces;
 using Hobby.Web.Authorize;
 using Hobby.Web.Controllers;
+using NLog;
 
 namespace Hobby.Web.Controllers
 {
     public class HomeController : BaseController
     {
-        private readonly IUserService _userService;
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
+        private readonly IUserService _userService;       
 
         public HomeController(IUserService userService)
         {
@@ -25,6 +28,15 @@ namespace Hobby.Web.Controllers
         {
             var survey = new Hobby.DomainEvents.Domain.Survey();
             survey.EndSurvey();
+
+            logger.Trace("Sample trace message");
+            logger.Debug("Sample debug message");
+            logger.Info("Sample informational message");
+            logger.Warn("Sample warning message");
+            logger.Error("Sample error message");
+            logger.Fatal("Sample fatal error message");
+
+            logger.Log(LogLevel.Info, "Sample informational message");
 
             if (User != null)
             {
