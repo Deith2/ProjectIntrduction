@@ -30,7 +30,7 @@ namespace Hobby.UnitTests
                 Password = "2"
             };
 
-            user.Password = user.getSHA1();
+            user.Password = user.Password.getSHA1();
             var entity = user.Map();
             uow.Users.Add(entity);
             uow.Save();
