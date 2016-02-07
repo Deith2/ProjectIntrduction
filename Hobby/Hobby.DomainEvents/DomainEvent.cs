@@ -10,6 +10,7 @@ namespace Hobby.DomainEvents
     public static class DomainEvent
     {
         private static List<Delegate> _actions;
+
         public static IEventDispatcher Dispatcher { get; set; }
 
         public static void Register<T>(Action<T> callback) where T : IDomainEvent
@@ -33,12 +34,13 @@ namespace Hobby.DomainEvents
             if (_actions != null)
             {
                 foreach (var action in _actions)
+                {
                     if (action is Action<T>)
                     {
                         ((Action<T>)action)(@event);
                     }
+                }
             }
         }
-
     }
 }

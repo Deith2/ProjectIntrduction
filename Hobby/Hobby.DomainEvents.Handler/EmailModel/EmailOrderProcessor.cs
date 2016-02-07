@@ -11,11 +11,13 @@ namespace Hobby.DomainEvents.Handler.EmailModel
     public class EmailOrderProcessor
     {
         private EmailSettings emailSettings;
+
         public EmailOrderProcessor(EmailSettings settings)
         {
             emailSettings = settings;
         }
-        public void ProcessOrderNewUser(decimal UserId, string email)
+
+        public void ProcessOrderNewUser(decimal userId, string email)
         {
             //Konfiguracja SMTP
             using (var smtpClient = new SmtpClient())
@@ -39,8 +41,7 @@ namespace Hobby.DomainEvents.Handler.EmailModel
                     smtpClient.PickupDirectoryLocation = emailSettings.FileLocation;
                     smtpClient.EnableSsl = false;
                 }
-                //Wybranie konkretnego użytkownika 
-     
+                //Wybranie konkretnego użytkownika      
 
                 //Treść emaila
                 StringBuilder body = new StringBuilder()
@@ -59,7 +60,6 @@ namespace Hobby.DomainEvents.Handler.EmailModel
                 .AppendLine("\n---")
                 .AppendLine("Pozdrawiamy,")
                 .AppendLine("QuadroSoftware");
-
 
                 //Dane nadawcy  
                 MailMessage mailMessage = new MailMessage(

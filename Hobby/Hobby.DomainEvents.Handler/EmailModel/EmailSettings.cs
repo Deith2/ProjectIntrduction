@@ -7,23 +7,47 @@ using System.Threading.Tasks;
 namespace Hobby.DomainEvents.Handler.EmailModel
 {
     public class EmailSettings
-    {        
-        public string MailToAddress;
-      
-        public string MailFromAddress = "QuadroSoftware@test.pl";
-     
-        public bool UseSsl = true;
+    {
+        public string MailToAddress { get; set; }
 
-        public string Username = "UżytkownikSmtp";
+        public string MailFromAddress 
+        {
+            get { return "QuadroSoftware@test.pl"; } 
+        }
 
-        public string Password = "HasłoSmtp";
+        public bool UseSsl 
+        { 
+            get { return true; } 
+        }
 
-        public string ServerName = "smtp.przykład.pl";
+        public string Username 
+        { 
+            get { return "UżytkownikSmtp"; } 
+        }
 
-        public int ServerPort = 587;
+        public string Password 
+        { 
+            get { return "HasłoSmtp"; } 
+        }
 
-        public bool WriteAsFile = true;
+        public string ServerName 
+        {
+            get { return "smtp.przykład.pl"; } 
+        }
 
-        public string FileLocation = @"C:\Hobby_emails";
+        public int ServerPort 
+        {
+            get { return 587; } 
+        }
+
+        public bool WriteAsFile 
+        { 
+            get { return true; } 
+        }
+
+        public string FileLocation 
+        { 
+            get { return @"C:\Hobby_emails"; } 
+        }
     }
 }
