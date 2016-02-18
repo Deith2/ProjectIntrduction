@@ -9,9 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hobby.Ninject
+namespace Hobby.Ninject.Containers
 {
-    public class ConsoleImplementation
+    public class NinjectConsoleCommon
     {
         /// <summary>
         /// Creates the kernel that will manage your application.
@@ -22,7 +22,7 @@ namespace Hobby.Ninject
             var kernel = new StandardKernel();
             try
             {
-                NinjectConsole.Container(kernel);
+                NinjectConsoleContainer.Container(kernel);
 
                 return kernel;
             }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hobby.Ninject
+namespace Hobby.Ninject.Containers
 {
     public class NinjectEventContainer : IEventDispatcher
     {

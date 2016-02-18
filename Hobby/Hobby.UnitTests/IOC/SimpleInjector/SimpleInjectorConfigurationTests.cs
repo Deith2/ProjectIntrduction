@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Hobby.UnitTests
+namespace Hobby.UnitTests.IOC.SimpleInjector
 {
     [TestClass]
 

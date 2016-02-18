@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ninject;
 
-namespace Hobby.UnitTests
+namespace Hobby.UnitTests.IOC.Ninject
 {
     [TestsOwner("dlukasik")]
     [TestClass]
@@ -22,7 +22,6 @@ namespace Hobby.UnitTests
         public void NinjectFirstMethod()
         {
             var uow = IoCNinjectProvider.Instance.Get<IUnitOfWork>();
-
             var user = new UserDTO
             {
                 Email = "czarnuch1001@gmail.com",

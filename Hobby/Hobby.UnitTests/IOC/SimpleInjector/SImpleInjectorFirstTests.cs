@@ -15,7 +15,7 @@ using Hobby.Services.Mappings;
 using Hobby.UnitTests.TestingTools;
 using Ninject;
 
-namespace Hobby.UnitTests
+namespace Hobby.UnitTests.IOC.SimpleInjector
 {
     [TestsOwner("dlukasik")]
     [TestClass]
@@ -25,7 +25,7 @@ namespace Hobby.UnitTests
         public void TestMapping()
         {
             //var test = context.Users.FirstOrDefault(p => p.Login.Contains("test"));
-            using (SimpleInjector.SimpleInjectorConsole.Instance.BeginLifetimeScope())
+            using (Hobby.SimpleInjector.SimpleInjectorConsole.Instance.BeginLifetimeScope())
             {
                 var uow = IoCCProvider.Container.GetInstance<IUnitOfWork>();
 
@@ -48,7 +48,7 @@ namespace Hobby.UnitTests
         [ExpectedException(typeof(DbUpdateException))]
         public void TestRelations()
         {
-            using (SimpleInjector.SimpleInjectorConsole.Instance.BeginLifetimeScope())
+            using (Hobby.SimpleInjector.SimpleInjectorConsole.Instance.BeginLifetimeScope())
             {
                 var uow = IoCCProvider.Container.GetInstance<IUnitOfWork>();
 
@@ -69,7 +69,7 @@ namespace Hobby.UnitTests
         [TestMethod]
         public void TestUserPermissions()
         {
-            using (SimpleInjector.SimpleInjectorConsole.Instance.BeginLifetimeScope())
+            using (Hobby.SimpleInjector.SimpleInjectorConsole.Instance.BeginLifetimeScope())
             {
                 var uow = IoCCProvider.Container.GetInstance<IUnitOfWork>();
 

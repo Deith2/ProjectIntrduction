@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Hoobby.Web.Controllers
+namespace Hobby.Web.Controllers
 {
     public class AngularController : Controller
     {
@@ -20,6 +20,21 @@ namespace Hoobby.Web.Controllers
         }
 
         public ActionResult Value()
+        {
+            return View();
+        }
+
+        public ActionResult Provider()
+        {
+            return View();
+        }
+
+        public ActionResult Dyrektywy()
+        {
+            return View();
+        }
+
+        public ActionResult NoRepeat()
         {
             return View();
         }

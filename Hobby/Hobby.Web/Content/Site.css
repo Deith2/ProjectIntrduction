@@ -15,3 +15,15 @@ select,
 textarea {
     max-width: 280px;
 }
+
+[ng\:cloak], [ng-cloak], ng-cloak {
+    display: none !important;
+}
+
+input[type="text"].testFocus {
+    background-color: greenyellow;
+}
+
+input[type="text"].testBlur{
+    background-color: red;
+}

@@ -1,4 +1,4 @@
-﻿using Hobby.Ninject;
+﻿using Hobby.Ninject.Containers;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace Hobby.UnitTests.TestingTools
         {
             get 
             {
-                return ConsoleImplementation.Instance();
+                return NinjectConsoleCommon.Instance();
             }
         }
     }

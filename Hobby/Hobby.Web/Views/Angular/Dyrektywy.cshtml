@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Dyrektywy";
+}
+
+<h2>Dyrektywy</h2>
+<div ng-app="app">
+    <div ng-controller="defaultCtrl">
+        <span ng-bind="test"></span>
+        <pre ng-bind-template="{{ tempText }} - {{ name }}! Może zawierać znaki specjalne (!#$%*^)_+)"></pre>
+
+        <div id="testPanel" class="panel">
+            <h3 class="panel-header" ng-cloak>Nazwa {{ name }}</h3>
+            <span ng-cloak>{{ tempText }}</span>                                                                                                
+        </div>
+        <input type="text" 
+               data-ng-class="{ testFocus: focus, testBlur: blur }"
+               data-ng-focus="focus = true; blur = false"
+               data-ng-blur="blur = true; focus = false" />
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="~/Scripts/AngularJSExample/Dyrektywy.js"></script>
+}
