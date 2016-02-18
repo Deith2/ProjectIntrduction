@@ -149,7 +149,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="IOC\Ninject\NinjectFirstTests.cs" />
-    <Compile Include="IOC\Ninject\UnitTest1.cs" />
     <Compile Include="IOC\SimpleInjector\SimpleInjectorConfigurationTests.cs" />
     <Compile Include="IOC\SimpleInjector\UnitTest1.cs" />
     <Compile Include="TestingTools\IoCCProvider.cs" />

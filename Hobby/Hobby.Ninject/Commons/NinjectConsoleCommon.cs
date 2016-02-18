@@ -1,5 +1,6 @@
 ﻿using Hobby.Data;
 using Hobby.Data.Interface;
+using Hobby.Ninject.Containers;
 using Hobby.Services;
 using Hobby.Services.Interfaces;
 using Ninject;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hobby.Ninject.Containers
+namespace Hobby.Ninject.Commons
 {
     public class NinjectConsoleCommon
     {

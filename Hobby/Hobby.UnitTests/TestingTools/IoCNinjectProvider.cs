@@ -1,4 +1,4 @@
-﻿using Hobby.Ninject.Containers;
+﻿using Hobby.Ninject.Commons;
 using Ninject;
 using System;
 using System.Collections.Generic;

@@ -54,11 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Containers\NinjectConsoleCommon.cs" />
+    <Compile Include="Commons\NinjectConsoleCommon.cs" />
     <Compile Include="Containers\NinjectConsoleContainer.cs" />
     <Compile Include="Containers\NinjectEventContainer.cs" />
-    <Compile Include="NinjectWebContainer.cs" />
-    <Compile Include="NinjectWebCommon.cs" />
+    <Compile Include="Containers\NinjectWebContainer.cs" />
+    <Compile Include="Commons\NinjectWebCommon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

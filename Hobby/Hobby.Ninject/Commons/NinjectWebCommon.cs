@@ -1,11 +1,11 @@
-﻿using Hobby.Ninject;
+﻿using Hobby.Ninject.Containers;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;
 using System;
 using System.Web;
 
-namespace Hobby.Ninject
+namespace Hobby.Ninject.Commons
 {
     public static class NinjectWebCommon
     {
