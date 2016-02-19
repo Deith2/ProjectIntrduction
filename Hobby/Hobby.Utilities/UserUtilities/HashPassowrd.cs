@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hobby.Utilities
+namespace Hobby.Utilities.UserUtilities
 {
     public static class HashPassowrd
     {

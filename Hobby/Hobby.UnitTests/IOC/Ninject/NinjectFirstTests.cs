@@ -3,7 +3,7 @@ using Hobby.DTO;
 using Hobby.Services.Interfaces;
 using Hobby.Services.Mappings;
 using Hobby.UnitTests.TestingTools;
-using Hobby.Utilities;
+using Hobby.Utilities.UserUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -22,6 +22,7 @@ namespace Hobby.UnitTests.IOC.Ninject
         public void NinjectFirstMethod()
         {
             var uow = IoCNinjectProvider.Instance.Get<IUnitOfWork>();
+
             var user = new UserDTO
             {
                 Email = "czarnuch1001@gmail.com",
@@ -35,16 +36,6 @@ namespace Hobby.UnitTests.IOC.Ninject
             uow.Save();
 
             Assert.IsNotNull(entity.Id);
-        }
-
-        [TestMethod]
-        public void NinjectUserService()
-        {
-            var _userService = IoCNinjectProvider.Instance.Get<IUserService>();
-
-            //var dto = _userService.test();
-
-            //Assert.IsNotNull(dto);
         }
     }
 }

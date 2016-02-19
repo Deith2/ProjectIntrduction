@@ -8,7 +8,7 @@ using Hobby.DTO;
 using Hobby.Entities;
 using Hobby.Services.Interfaces;
 using Hobby.Services.Mappings;
-using Hobby.Utilities;
+using Hobby.Utilities.UserUtilities;
 
 namespace Hobby.Services
 {
@@ -19,15 +19,6 @@ namespace Hobby.Services
         public UserService(IUnitOfWork uow)
         {
             _uow = uow;
-        }
-
-        public List<UserDTO> UserTake(decimal id)
-        {
-            var test = _uow.Users.All().ToList().MapList();
-            //var z = _uow.Users.FirstOrDefault(p => p.Login == "darek");
-            //var c = _uow.Users.Single(p => p.Id == 3);
-            //var x = _uow.Users.GetById(3);
-            return test;
         }
 
         public UserDTO CheckUser(string login, string password)
@@ -60,11 +51,6 @@ namespace Hobby.Services
             }
 
             return permissionActiveList;
-        }
-
-        public decimal IdPermissionByName(string role)
-        {
-            return _uow.Permissions.FirstOrDefault(p => p.Name == role).Id;
         }
     }
 }
