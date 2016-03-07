@@ -202,6 +202,7 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\AngularJSExample\DIProvider.js" />
     <Content Include="Scripts\AngularJSExample\Dyrektywy.js" />
+    <Content Include="Scripts\AngularJSExample\ModalView.js" />
     <Content Include="Scripts\AngularJSExample\noRepeat.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -249,6 +250,7 @@
     <Content Include="Views\Angular\Provider.cshtml" />
     <Content Include="Views\Angular\Dyrektywy.cshtml" />
     <Content Include="Views\Angular\NoRepeat.cshtml" />
+    <Content Include="Views\Angular\Modal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -54,6 +54,7 @@ namespace Hobby.UnitTests.Services
 
             //Assert
             Assert.AreEqual("Admin", result[0]);
+            Assert.IsNull(resultFail);
         }
     }
 }

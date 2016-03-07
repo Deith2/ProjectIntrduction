@@ -38,5 +38,10 @@ namespace Hobby.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Modal()
+        {
+            return View();
+        }
     }
 }
