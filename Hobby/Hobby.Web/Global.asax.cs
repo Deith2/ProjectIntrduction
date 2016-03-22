@@ -22,6 +22,8 @@ namespace Hobby.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             //SimpleInjectorInitializer.Initialize();
+            //ViewEngines.Engines.Clear();
+            //ViewEngines.Engines.Add(new HobbyRazorViewEngine());
         }
 
         protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)

@@ -1,4 +1,8 @@
-﻿<div ng-app="mymodal">
+﻿@{
+    ViewBag.Title = "Modal";
+}
+
+<div id="service" ng-app="mymodal">
     <div ng-controller="MainCtrl" class="container">
         <h1>Modal example</h1>
         <button ng-click="toggleModal()" class="btn btn-default">Open modal</button>
@@ -18,3 +22,6 @@
         </modal>
     </div>
 </div>
+@section Scripts{
+    <script src="~/Scripts/AngularJSExample/Modal.js"></script>
+}

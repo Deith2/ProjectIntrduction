@@ -163,6 +163,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\HobbyRazorViewEngine.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
@@ -177,6 +178,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Parts\Authorization\AuthorizationController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -202,7 +204,7 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\AngularJSExample\DIProvider.js" />
     <Content Include="Scripts\AngularJSExample\Dyrektywy.js" />
-    <Content Include="Scripts\AngularJSExample\ModalView.js" />
+    <Content Include="Scripts\AngularJSExample\Modal.js" />
     <Content Include="Scripts\AngularJSExample\noRepeat.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -215,6 +217,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Parts\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -254,6 +257,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Parts\Authorization\Models\" />
+    <Folder Include="Parts\Authorization\Scripts\" />
+    <Folder Include="Parts\Authorization\Styles\" />
+    <Folder Include="Parts\Authorization\Views\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
