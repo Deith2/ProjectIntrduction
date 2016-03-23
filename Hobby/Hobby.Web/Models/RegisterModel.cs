@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
+using System.Web;
 
 namespace Hobby.Web.Models
 {
-    public class LoginViewModel
+    public class RegisterModel
     {
         [Required]
         public string Email { get; set; }
@@ -14,6 +14,10 @@ namespace Hobby.Web.Models
         [Required]
         public string Password { get; set; }
 
-        public bool RememberMe { get; set; }
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
     }
 }

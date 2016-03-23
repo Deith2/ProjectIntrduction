@@ -23,7 +23,8 @@ namespace Hobby.UnitTests.Services
                 CreateDate = DateTime.Now,
                 Email = "test@test.pl",
                 Id = 1,
-                Login = "test",
+                FirstName = "test",
+                LastName = "test",
                 Password = "2".getSHA1()
             };
 

@@ -22,10 +22,10 @@
             <div class="col-sm-6">
                 <div class="col-sm-6 input-group">
                     <span class="input-group-addon glyphicon glyphicon-user"></span>
-                    @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @placeholder = "użytkownik" })
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "użytkownik" })
                 </div>
                 <div class="col-sm-6">
-                    @Html.ValidationMessageFor(model => model.Username)
+                    @Html.ValidationMessageFor(model => model.Email)
                 </div>
             </div>
         </div>

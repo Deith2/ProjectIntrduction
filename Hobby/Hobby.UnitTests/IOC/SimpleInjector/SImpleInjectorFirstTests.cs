@@ -31,7 +31,7 @@ namespace Hobby.UnitTests.IOC.SimpleInjector
 
                 var user = new UserDTO
                 {
-                    Login = "darek3",
+                    Email = "darek3@wp.pl",
                     Password = "2"
                 };
 
@@ -87,7 +87,7 @@ namespace Hobby.UnitTests.IOC.SimpleInjector
 
                 var user = new UserDTO
                 {
-                    Login = "testlogin1",
+                    FirstName = "testlogin1",
                     Password = "test"
                 };
                 //Trzeba przypsiac do obiektu

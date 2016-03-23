@@ -1,8 +1,10 @@
-﻿using Hobby.Services.Interfaces;
+﻿using Hobby.DTO;
+using Hobby.Services.Interfaces;
 using Hobby.Utilities;
 using Hobby.Web.Authorize;
 using Hobby.Web.Models;
 using Newtonsoft.Json;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,8 @@ namespace Hobby.Web.Controllers
 {
     public class AccountController : Controller
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         private readonly IUserService _userService;
 
         public AccountController(IUserService userService)
@@ -26,13 +30,12 @@ namespace Hobby.Web.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Index(LoginViewModel model, string returnUrl = "")
+        [HttpPost]   
+        public JsonResult Login(LoginViewModel model, string returnUrl = "")
         {
             if (ModelState.IsValid)
             {
-                var user = _userService.CheckUser(model.Username, model.Password);
+                var user = _userService.CheckUser(model.Email, model.Password);
 
                 if (user != null)
                 {
@@ -41,7 +44,8 @@ namespace Hobby.Web.Controllers
                     CustomPrincipalSerializeModel serializeModel = new CustomPrincipalSerializeModel();
                     serializeModel.UserId = user.Id;
                     serializeModel.Email = user.Email;
-                    serializeModel.Login = user.Login;
+                    serializeModel.FirstName = user.FirstName;
+                    serializeModel.LastName = user.LastName;
                     serializeModel.roles = roles;
 
                     string userData = JsonConvert.SerializeObject(serializeModel);
@@ -67,14 +71,46 @@ namespace Hobby.Web.Controllers
                     //}
                     //else
                     //{
-                    return RedirectToAction("Index", "Home");
+                    return Json(new 
+                    {
+                        redirectUrl = Url.Action("Index", "Home"),
+                        isRedirect = true
+                    });
                     //}
                 }
 
                 ModelState.AddModelError(String.Empty, "Incorrect username and/or password");
             }
 
-            return View(model);
+            return Json(model);
+        }
+
+        [HttpPost]
+        public JsonResult Register(RegisterModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                UserDTO entity = new UserDTO()
+                {
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Password = model.Password
+                };
+                try
+                {
+                    _userService.Register(entity);
+                }
+                catch (Exception)
+                {
+                    logger.Error("Error to register a new user");
+                    return Json("Error save");
+                }
+
+                return Json(model);
+            }
+
+            return Json(new { });           
         }
 
         [AllowAnonymous]

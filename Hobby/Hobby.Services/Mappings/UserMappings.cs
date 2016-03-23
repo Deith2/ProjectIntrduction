@@ -15,7 +15,8 @@ namespace Hobby.Services.Mappings
             User target = new User();
 
             target.Id = source.Id;
-            target.Login = source.Login;
+            target.FirstName = source.FirstName;
+            target.LastName = source.LastName;
             target.Password = source.Password;
             target.Email = source.Email;
 
@@ -26,7 +27,8 @@ namespace Hobby.Services.Mappings
         {
             UserDTO target = new UserDTO();
             target.Id = source.Id;
-            target.Login = source.Login;
+            target.FirstName = source.FirstName;
+            target.LastName = source.LastName;
             target.Password = source.Password;
             target.Email = source.Email;
 

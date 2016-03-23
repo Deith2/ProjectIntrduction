@@ -18,7 +18,9 @@ namespace Hobby.Data.ConfigurationEntities
             Property(e => e.Id).HasPrecision(18, 0);
             Property(e => e.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            Property(e => e.Login).IsRequired();
+            Property(e => e.FirstName).IsRequired();
+
+            Property(e => e.LastName).IsRequired();
 
             Property(e => e.Email).IsRequired();
 

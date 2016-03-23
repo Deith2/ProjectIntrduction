@@ -178,6 +178,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Parts\Authorization\AuthorizationController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

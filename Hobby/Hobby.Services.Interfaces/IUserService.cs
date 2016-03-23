@@ -12,5 +12,7 @@ namespace Hobby.Services.Interfaces
         UserDTO CheckUser(string login, string password);
 
         List<string> PermissionActiveNameList(decimal idUser);
+
+        void Register(UserDTO user);
     }
 }

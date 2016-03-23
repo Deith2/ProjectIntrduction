@@ -23,7 +23,7 @@ namespace Hobby.Web.Controllers
             _userService = userService;
         }
 
-        [HobbyAuthorize(Roles = "Admin")]
+        //[HobbyAuthorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var survey = new Hobby.DomainEvents.Domain.Survey();
@@ -41,7 +41,8 @@ namespace Hobby.Web.Controllers
             if (User != null)
             {
                 ViewBag.user = User.Identity.IsAuthenticated;
-                ViewBag.user1 = User.Login;
+                ViewBag.user1 = User.FirstName;
+                ViewBag.user5 = User.LastName;
                 ViewBag.user2 = User.Email;
                 ViewBag.user3 = User.UserId;
                 ViewBag.user4 = User.roles.Count;
@@ -53,7 +54,7 @@ namespace Hobby.Web.Controllers
             }
         }
 
-        [HobbyAuthorize(Users = "darek4")]
+        [HobbyAuthorize(Users = "dareklukasik@o2.pl")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

@@ -26,7 +26,8 @@ namespace Hobby.UnitTests.IOC.Ninject
             var user = new UserDTO
             {
                 Email = "czarnuch1001@gmail.com",
-                Login = "darek4",
+                FirstName = "darek4",
+                LastName = "darek4",
                 Password = "2"
             };
 

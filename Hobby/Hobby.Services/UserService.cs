@@ -24,7 +24,7 @@ namespace Hobby.Services
         public UserDTO CheckUser(string login, string password)
         {
             var passwordSHA = password.getSHA1();
-            var entity = _uow.Users.FirstOrDefaultAsNoTracking(p => p.Login == login && p.Password == passwordSHA);
+            var entity = _uow.Users.FirstOrDefaultAsNoTracking(p => p.Email == login && p.Password == passwordSHA);
 
             if (entity != null)
             {
@@ -51,6 +51,14 @@ namespace Hobby.Services
             }
 
             return permissionActiveList;
+        }
+
+        public void Register(UserDTO user)
+        {
+            var entity = user.Map();
+            entity.Password = entity.Password.getSHA1();
+            _uow.Users.Add(entity);
+            _uow.Save();
         }
     }
 }

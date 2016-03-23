@@ -31,7 +31,7 @@ namespace Hobby.Web.Authorize
                 {
                     //if (!Users.Contains(CurrentUser.UserId.ToString())) Do przemyślenie czy patrzeć po Id!!!!
 
-                    if (!Users.Contains(CurrentUser.Login.ToString()))
+                    if (!Users.Contains(CurrentUser.Email.ToString()))
                     {
                         filterContext.Result = new RedirectToRouteResult(new
                      RouteValueDictionary(new { controller = "Error", action = "AccessDenied" }));

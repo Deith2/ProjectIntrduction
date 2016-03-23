@@ -38,7 +38,8 @@ namespace Hobby.Web
                 CustomPrincipal newUser = new CustomPrincipal(authTicket.Name);
                 newUser.UserId = serializeModel.UserId;
                 newUser.Email = serializeModel.Email;
-                newUser.Login = serializeModel.Login;
+                newUser.FirstName = serializeModel.FirstName;
+                newUser.LastName = serializeModel.LastName;
                 newUser.roles = serializeModel.roles;
 
                 HttpContext.Current.User = newUser;

@@ -39,7 +39,9 @@ namespace Hobby.Web.Authorize
 
         public string Email { get; set; }
 
-        public string Login { get; set; }
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
 
         public List<string> roles { get; set; }
     }

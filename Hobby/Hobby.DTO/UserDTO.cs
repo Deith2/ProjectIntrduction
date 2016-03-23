@@ -10,7 +10,9 @@ namespace Hobby.DTO
     {
         public virtual decimal Id { get; set; }
 
-        public virtual string Login { get; set; }
+        public virtual string FirstName { get; set; }
+
+        public virtual string LastName { get; set; }
 
         public virtual string Email { get; set; }
 
