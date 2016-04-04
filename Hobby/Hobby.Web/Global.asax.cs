@@ -23,7 +23,7 @@ namespace Hobby.Web
 
             //SimpleInjectorInitializer.Initialize();
             //ViewEngines.Engines.Clear();
-            //ViewEngines.Engines.Add(new HobbyRazorViewEngine());
+            ViewEngines.Engines.Add(new HobbyRazorViewEngine());
         }
 
         protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)

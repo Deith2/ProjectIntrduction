@@ -30,13 +30,6 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right" data-ng-app="mymodal" data-ng-controller="MainCtrl">
-                    <li id="service">
-                        <a href="#" id="href" data-ng-click="toggleModal()">Zarejestruj / Zaloguj się</a>
-                        @Html.Partial("~/Parts/Authorization/Views/Authorization.cshtml")
-                    </li>
-                </ul>
-
             </div>
         </div>
 

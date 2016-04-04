@@ -13,6 +13,6 @@ namespace Hobby.Services.Interfaces
 
         List<string> PermissionActiveNameList(decimal idUser);
 
-        void Register(UserDTO user);
+        bool Register(UserDTO user);
     }
 }

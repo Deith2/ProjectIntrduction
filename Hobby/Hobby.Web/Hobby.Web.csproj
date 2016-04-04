@@ -180,6 +180,8 @@
     </Compile>
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Parts\Authorization\AuthorizationController.cs" />
+    <Compile Include="Parts\Authorization\Models\LoginModel.cs" />
+    <Compile Include="Parts\Authorization\Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +202,9 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="connectionStrings.config" />
+    <Content Include="Parts\Authorization\Scripts\modal-view\modal-password.dir.js" />
+    <Content Include="Parts\Authorization\Scripts\modal-view\modal-view.ctrl.js" />
+    <Content Include="Parts\Authorization\Scripts\modal-view\modal-view.dir.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -219,6 +224,8 @@
     </None>
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Parts\_ViewStart.cshtml" />
+    <Content Include="Parts\Web.config" />
+    <Content Include="Parts\Authorization\Views\Authorization.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -255,13 +262,11 @@
     <Content Include="Views\Angular\Dyrektywy.cshtml" />
     <Content Include="Views\Angular\NoRepeat.cshtml" />
     <Content Include="Views\Angular\Modal.cshtml" />
+    <Content Include="Views\Shared\_LayoutAngular.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Parts\Authorization\Models\" />
-    <Folder Include="Parts\Authorization\Scripts\" />
     <Folder Include="Parts\Authorization\Styles\" />
-    <Folder Include="Parts\Authorization\Views\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

@@ -97,6 +97,7 @@ namespace Hobby.Web.Controllers
                     LastName = model.LastName,
                     Password = model.Password
                 };
+
                 try
                 {
                     _userService.Register(entity);

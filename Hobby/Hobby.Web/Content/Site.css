@@ -27,3 +27,8 @@ input[type="text"].testFocus {
 input[type="text"].testBlur{
     background-color: red;
 }
+
+
+.modal-backdrop{
+    z-index:1020;
+}

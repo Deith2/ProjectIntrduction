@@ -14,6 +14,8 @@ namespace Hobby.Data.Interface
 
         TEntity Single(Expression<Func<TEntity, bool>> filter);
 
+        TEntity SingleOrDefault(Expression<Func<TEntity, bool>> filter);
+
         TEntity SingleAsNoTracking(Expression<Func<TEntity, bool>> filter);
 
         TEntity FirstOrDefault(Expression<Func<TEntity, bool>> filter);

@@ -53,12 +53,23 @@ namespace Hobby.Services
             return permissionActiveList;
         }
 
-        public void Register(UserDTO user)
+        public bool Register(UserDTO user)
         {
-            var entity = user.Map();
-            entity.Password = entity.Password.getSHA1();
-            _uow.Users.Add(entity);
-            _uow.Save();
+            var userExist = _uow.Users.SingleOrDefault(p => p.Email == user.Email);
+
+            if (userExist == null)
+            {
+                var entity = user.Map();
+                entity.Password = entity.Password.getSHA1();
+                _uow.Users.Add(entity);
+                _uow.Save();
+
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

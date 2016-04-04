@@ -46,6 +46,13 @@ namespace Hobby.Web.App_Start
             return base.CreateView(controllerContext, viewPath.Replace("%1", GetLastNameSpacePart(nameSpace)), masterPath.Replace("%1", GetLastNameSpacePart(nameSpace)));
         }
 
+        protected override bool FileExists(ControllerContext controllerContext, string virtualPath)
+        {
+            var nameSpace = controllerContext.Controller.GetType().Namespace;
+            var exists = base.FileExists(controllerContext, virtualPath.Replace("%1", GetLastNameSpacePart(nameSpace)));
+            return exists;
+        }
+
         private string GetLastNameSpacePart(string nameSpace)
         {
             var nameSpaceParts = nameSpace.Split(".".ToCharArray());

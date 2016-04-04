@@ -41,6 +41,11 @@ namespace Hobby.Data
             return DbSet.Where(filter).Single();
         }
 
+        public virtual TEntity SingleOrDefault(Expression<Func<TEntity, bool>> filter)
+        {
+            return DbSet.Where(filter).SingleOrDefault();
+        }
+
         public virtual TEntity SingleAsNoTracking(Expression<Func<TEntity, bool>> filter)
         {
             return DbSet.AsNoTracking().Where(filter).Single();
