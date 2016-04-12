@@ -36,11 +36,13 @@ mymodal.controller('MainCtrl', function ($scope, $http) {
             data: content
         }).then(function mySucces(response) {
             console.log(response)
-            if (!response.data.userexist) {
+            if (!response.data.userExist) {
+                console.log("udalo sie");
                 $scope.login(response.data.userModel);
             }
             else {
-                $()
+                console.log("login Istnieje")
+                $scope.mailVerify = true;
             }
         }, function myError(response) {
             alert("Proszę spróbować za chwilę");

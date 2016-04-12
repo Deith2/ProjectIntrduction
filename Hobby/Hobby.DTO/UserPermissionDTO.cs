@@ -16,6 +16,8 @@ namespace Hobby.DTO
 
         public virtual DateTime? CreateDate { get; set; }
 
+        public virtual DateTime? LastModifyDate { get; set; }
+
         public virtual byte[] RowVersion { get; set; }
     }
 }

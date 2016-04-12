@@ -12,7 +12,9 @@ namespace Hobby.DTO
 
         public virtual string Name { get; set; }
 
-        public virtual bool Active { get; set; }
+        public int Value { get; set; }
+
+        public virtual bool Delete { get; set; }
 
         public virtual string Description { get; set; }
 

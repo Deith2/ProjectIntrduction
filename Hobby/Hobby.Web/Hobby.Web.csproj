@@ -274,6 +274,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Hobby.Common\Hobby.Common.csproj">
+      <Project>{2437df45-72f0-406c-9c9c-fa62da4720a1}</Project>
+      <Name>Hobby.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hobby.DomainEvents\Hobby.DomainEvents.csproj">
       <Project>{a96c0d95-8f0c-444b-8460-1dfca6fc7796}</Project>
       <Name>Hobby.DomainEvents</Name>
@@ -293,10 +297,6 @@
     <ProjectReference Include="..\Hobby.SimpleInjector\Hobby.SimpleInjector.csproj">
       <Project>{95e8de34-04aa-44ff-879d-b4c3791533dd}</Project>
       <Name>Hobby.SimpleInjector</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hobby.Utilities\Hobby.Utilities.csproj">
-      <Project>{dbd1b82f-286d-404d-96e1-166ca7b41f78}</Project>
-      <Name>Hobby.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

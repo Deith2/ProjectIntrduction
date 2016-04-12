@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Hobby.Common.Authentication;
+using Hobby.Common.Enum;
 using Hobby.Data.Interface;
 using Hobby.DTO;
 using Hobby.Entities;
 using Hobby.Services.Interfaces;
 using Hobby.Services.Mappings;
-using Hobby.Utilities.UserUtilities;
 
 namespace Hobby.Services
 {
@@ -43,7 +42,7 @@ namespace Hobby.Services
             var entity = _uow.UserPermissions.AllAsNoTracking(p => p.IdUser == idUser).Select(p => p.IdPermission);
             foreach (var idPermission in entity)
             {
-                var getActivePermission = _uow.Permissions.FirstOrDefaultAsNoTracking(p => p.Id == idPermission && p.Active == true);
+                var getActivePermission = _uow.Permissions.FirstOrDefaultAsNoTracking(p => p.Id == idPermission && p.Delete == false);
                 if (getActivePermission != null)
                 {
                     permissionActiveList.Add(getActivePermission.Name);
@@ -62,6 +61,16 @@ namespace Hobby.Services
                 var entity = user.Map();
                 entity.Password = entity.Password.getSHA1();
                 _uow.Users.Add(entity);
+                _uow.Save();
+
+                var permission = _uow.Permissions.Single(p => p.Value == (int)PermissionType.User && p.Delete == false);
+                UserPermission userPermission = new UserPermission
+                {
+                    IdUser = entity.Id,
+                    IdPermission = permission.Id,
+                    LastModifyDate = DateTime.Now,
+                };
+                _uow.UserPermissions.Add(userPermission);
                 _uow.Save();
 
                 return false;

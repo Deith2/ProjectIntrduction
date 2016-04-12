@@ -55,6 +55,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Hobby.Common\Hobby.Common.csproj">
+      <Project>{2437df45-72f0-406c-9c9c-fa62da4720a1}</Project>
+      <Name>Hobby.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hobby.Data.Interface\Hobby.Data.Interface.csproj">
       <Project>{07aba311-4374-4fd0-a420-48b8dbb1767e}</Project>
       <Name>Hobby.Data.Interface</Name>
@@ -74,10 +78,6 @@
     <ProjectReference Include="..\Hobby.Services.Interfaces\Hobby.Services.Interfaces.csproj">
       <Project>{172ace68-4e52-4c9b-ac5d-3fa1b16634cd}</Project>
       <Name>Hobby.Services.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hobby.Utilities\Hobby.Utilities.csproj">
-      <Project>{dbd1b82f-286d-404d-96e1-166ca7b41f78}</Project>
-      <Name>Hobby.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

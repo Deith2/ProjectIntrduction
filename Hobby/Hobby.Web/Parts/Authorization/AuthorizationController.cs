@@ -74,8 +74,7 @@ namespace Hobby.Web.Parts.Authorization
 
         [HttpPost]
         public JsonResult Register(RegisterModel model)
-        {
-            
+        {          
             if (ModelState.IsValid)
             {  
                 try
@@ -88,10 +87,7 @@ namespace Hobby.Web.Parts.Authorization
                         Password = model.Password
                     };
                     bool userExist = _userService.Register(entity);
-                    if (userExist)
-                    {
-                       
-                    }
+
                     return Json(new
                     {
                         userExist = userExist,

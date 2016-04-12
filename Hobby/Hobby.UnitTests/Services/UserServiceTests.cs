@@ -1,7 +1,7 @@
-﻿using Hobby.DTO;
+﻿using Hobby.Common.Authentication;
+using Hobby.DTO;
 using Hobby.Services.Interfaces;
 using Hobby.UnitTests.TestingTools;
-using Hobby.Utilities.UserUtilities;
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;

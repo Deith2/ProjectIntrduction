@@ -17,7 +17,8 @@ namespace Hobby.Services.Mappings
             target.Description = source.Description;
             target.Id = source.Id;
             target.Name = source.Name;
-            target.Active = source.Active;
+            target.Delete = source.Delete;
+            target.Value = source.Value;
 
             return target;
         }
@@ -29,7 +30,8 @@ namespace Hobby.Services.Mappings
             target.Description = source.Description;
             target.Id = source.Id;
             target.Name = source.Name;
-            target.Active = source.Active;
+            target.Delete = source.Delete;
+            target.Value = source.Value;
 
             return target;
         }

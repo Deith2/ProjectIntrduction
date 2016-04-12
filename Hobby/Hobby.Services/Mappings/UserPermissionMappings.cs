@@ -17,6 +17,7 @@ namespace Hobby.Services.Mappings
             target.Id = source.Id;
             target.IdPermission = source.IdPermission;
             target.IdUser = source.IdUser;
+            target.LastModifyDate = source.LastModifyDate;
 
             return target;
         }
@@ -28,6 +29,7 @@ namespace Hobby.Services.Mappings
             target.Id = source.Id;
             target.IdPermission = source.IdPermission;
             target.IdUser = source.IdUser;
+            target.LastModifyDate = source.LastModifyDate;
 
             return target;
         }

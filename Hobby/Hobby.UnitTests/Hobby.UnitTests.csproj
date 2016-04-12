@@ -163,6 +163,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Hobby.Common\Hobby.Common.csproj">
+      <Project>{2437df45-72f0-406c-9c9c-fa62da4720a1}</Project>
+      <Name>Hobby.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hobby.Data.Interface\Hobby.Data.Interface.csproj">
       <Project>{07aba311-4374-4fd0-a420-48b8dbb1767e}</Project>
       <Name>Hobby.Data.Interface</Name>
@@ -194,10 +198,6 @@
     <ProjectReference Include="..\Hobby.SimpleInjector\Hobby.SimpleInjector.csproj">
       <Project>{95e8de34-04aa-44ff-879d-b4c3791533dd}</Project>
       <Name>Hobby.SimpleInjector</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hobby.Utilities\Hobby.Utilities.csproj">
-      <Project>{dbd1b82f-286d-404d-96e1-166ca7b41f78}</Project>
-      <Name>Hobby.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

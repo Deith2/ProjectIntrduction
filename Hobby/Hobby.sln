@@ -31,13 +31,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hobby.DTO", "Hobby.DTO\Hobb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hobby.Entities.Interface", "Hobby.Entities.Interface\Hobby.Entities.Interface.csproj", "{D9C9E31C-C8AA-499A-91FE-D1520FF8DBC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hobby.Utilities", "Hobby.Utilities\Hobby.Utilities.csproj", "{DBD1B82F-286D-404D-96E1-166CA7B41F78}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hobby.DomainEvents", "Hobby.DomainEvents\Hobby.DomainEvents.csproj", "{A96C0D95-8F0C-444B-8460-1DFCA6FC7796}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hobby.DomainEvents.Handler", "Hobby.DomainEvents.Handler\Hobby.DomainEvents.Handler.csproj", "{4C627D69-93A0-40CA-BE9E-DEF860B8EFF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hobby.Ninject", "Hobby.Ninject\Hobby.Ninject.csproj", "{48539130-7D8F-4868-93F1-788B60C265F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hobby.Common", "Hobby.Common\Hobby.Common.csproj", "{2437DF45-72F0-406C-9C9C-FA62DA4720A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,10 +85,6 @@ Global
 		{D9C9E31C-C8AA-499A-91FE-D1520FF8DBC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9C9E31C-C8AA-499A-91FE-D1520FF8DBC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9C9E31C-C8AA-499A-91FE-D1520FF8DBC8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBD1B82F-286D-404D-96E1-166CA7B41F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBD1B82F-286D-404D-96E1-166CA7B41F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBD1B82F-286D-404D-96E1-166CA7B41F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBD1B82F-286D-404D-96E1-166CA7B41F78}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A96C0D95-8F0C-444B-8460-1DFCA6FC7796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A96C0D95-8F0C-444B-8460-1DFCA6FC7796}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A96C0D95-8F0C-444B-8460-1DFCA6FC7796}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -101,6 +97,10 @@ Global
 		{48539130-7D8F-4868-93F1-788B60C265F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48539130-7D8F-4868-93F1-788B60C265F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48539130-7D8F-4868-93F1-788B60C265F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2437DF45-72F0-406C-9C9C-FA62DA4720A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2437DF45-72F0-406C-9C9C-FA62DA4720A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2437DF45-72F0-406C-9C9C-FA62DA4720A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2437DF45-72F0-406C-9C9C-FA62DA4720A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,9 +1,9 @@
-﻿using Hobby.Data.Interface;
+﻿using Hobby.Common.Authentication;
+using Hobby.Data.Interface;
 using Hobby.DTO;
 using Hobby.Services.Interfaces;
 using Hobby.Services.Mappings;
 using Hobby.UnitTests.TestingTools;
-using Hobby.Utilities.UserUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿using Hobby.Utilities.UserUtilities;
+﻿using Hobby.Common.Authentication;
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
