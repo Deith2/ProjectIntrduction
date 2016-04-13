@@ -5,11 +5,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Hobby.Web.Controllers
+namespace Hobby.Web.Parts
 {
     public class BaseController : Controller
     {
-        // GET: Base
         protected virtual new CustomPrincipal User
         {
             get { return HttpContext.User as CustomPrincipal; }

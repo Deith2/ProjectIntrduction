@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Settings";
+}
+
+<h2>Ogólne ustawienia konta</h2>
+<div id="settings" ng-app="appTable">
+    <div data-ng-controller="deafultCtrl">
+        <table class="table">
+            <tr>
+                <td class="col-sm-4">Imię</td>
+                <td class="col-sm-5" ng-show="!showForms" ng-click="showForms=true" data-ng-model="FirstName">{{FirstName}}</td>
+                <td class="col-sm-3" ng-show="showForms">
+                    <input type="text" ng-model="FirstName" />
+                    <a href="#" ng-click="saveChanges(FirstName); showForms = false" class="glyphicon glyphicon-ok">Zapisz</a>
+                </td>
+                <pre>form = {{FirstName | json}}</pre>
+                <td class="col-sm-1">
+                    <a href="#" ng-click="showForms=true" class="glyphicon glyphicon-pencil"></a>
+                </td>              
+            </tr>
+            <tr>
+                <td class="col-sm-4">Nazwisko</td>
+                <td class="col-sm-5" ng-show="!showForms" ng-click="showForms2=true">{{ LastName }}</td>
+                @*<td class="col-sm-3" ng-show="showForms">
+                    <input ng-model="mountain.metres" />
+                    <a href="#" ng-click="saveChanges($index, mountain.mountain, mountain.metres); showForms = false" class="glyphicon glyphicon-ok">Zapisz</a>
+                </td>*@
+                <td class="col-sm-1">
+                    <a href="#" ng-click="showForms=true" class="glyphicon glyphicon-pencil"></a>
+                </td>
+            </tr>
+            <tr ng-class="{default: $even, success: $odd}">
+                <td class="col-sm-4">Email</td>
+                <td class="col-sm-5" ng-show="!showForms" ng-click="showForms=true">{{ Email }}</td>
+                @*<td class="col-sm-3" ng-show="showForms">
+                    <input ng-model="mountain.metres" />
+                    <a href="#" ng-click="saveChanges($index, mountain.mountain, mountain.metres); showForms = false" class="glyphicon glyphicon-ok">Zapisz</a>
+                </td>*@
+                <td class="col-sm-1">
+                    <a href="#" ng-click="showForms=true" class="glyphicon glyphicon-pencil"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/Parts/UserSettings/Scripts/settings-view/settings-view.ctrl.js"></script>
+}
+
+
+

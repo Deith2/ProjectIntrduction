@@ -16,11 +16,11 @@ namespace Hobby.Web.Parts.Authorization
     public class AuthorizationController : Controller
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
-        private readonly IUserService _userService;
+        private readonly IAuthenticateService _authService;
 
-        public AuthorizationController(IUserService userService)
+        public AuthorizationController(IAuthenticateService authService)
         {
-            _userService = userService;
+            _authService = authService;
         }
         // GET: Home
         public ActionResult Index()
@@ -33,11 +33,11 @@ namespace Hobby.Web.Parts.Authorization
         {
             if (ModelState.IsValid)
             {
-                var user = _userService.CheckUser(model.Email, model.Password);
+                var user = _authService.CheckUser(model.Email, model.Password);
 
                 if (user != null)
                 {
-                    var roles = _userService.PermissionActiveNameList(user.Id).ToList();
+                    var roles = _authService.PermissionActiveNameList(user.Id).ToList();
 
                     CustomPrincipalSerializeModel serializeModel = new CustomPrincipalSerializeModel();
                     serializeModel.UserId = user.Id;
@@ -86,7 +86,7 @@ namespace Hobby.Web.Parts.Authorization
                         LastName = model.LastName,
                         Password = model.Password
                     };
-                    bool userExist = _userService.Register(entity);
+                    bool userExist = _authService.Register(entity);
 
                     return Json(new
                     {
@@ -105,11 +105,10 @@ namespace Hobby.Web.Parts.Authorization
             return Json(new { });
         }
 
-        [AllowAnonymous]
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Login", "Account", null);
+            return RedirectToAction("Index", "Account", null);
         }
     }
 }

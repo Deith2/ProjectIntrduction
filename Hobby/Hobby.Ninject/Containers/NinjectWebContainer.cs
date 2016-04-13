@@ -22,6 +22,7 @@ namespace Hobby.Ninject.Containers
         {
             kernel.Bind<IUnitOfWork>().To<UnitOfWork>().InThreadScope();
             kernel.Bind<IUserService>().To<UserService>();
+            kernel.Bind<IAuthenticateService>().To<AuthenticationService>();
 
             DomainEvent.Dispatcher = new NinjectEventContainer(kernel);
             kernel.Bind<IDomainHandler<EndOfSurvey>>().To<EndOfSurveyHandler>();

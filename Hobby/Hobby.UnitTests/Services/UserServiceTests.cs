@@ -28,7 +28,7 @@ namespace Hobby.UnitTests.Services
                 Password = "2".getSHA1()
             };
 
-            Mock<IUserService> mockService = new Mock<IUserService>();
+            Mock<IAuthenticateService> mockService = new Mock<IAuthenticateService>();
             mockService.Setup(_test => _test.CheckUser("test", "2")).Returns(userDTO);
 
             //Act           
@@ -42,7 +42,7 @@ namespace Hobby.UnitTests.Services
         public void UserService_PermissionActiveNameList()
         {
             //Arrange
-            Mock<IUserService> mockService = new Mock<IUserService>();
+            Mock<IAuthenticateService> mockService = new Mock<IAuthenticateService>();
             mockService.Setup(_test => _test.PermissionActiveNameList(1)).Returns(new List<string> 
             {
                 "Admin",

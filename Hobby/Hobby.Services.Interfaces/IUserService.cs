@@ -9,10 +9,6 @@ namespace Hobby.Services.Interfaces
 {
     public interface IUserService
     {
-        UserDTO CheckUser(string login, string password);
-
-        List<string> PermissionActiveNameList(decimal idUser);
-
-        bool Register(UserDTO user);
+        UserDTO GetUserDTO(decimal id);
     }
 }

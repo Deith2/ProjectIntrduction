@@ -8,6 +8,7 @@ using Hobby.DomainEvents.Events;
 using Hobby.Services.Interfaces;
 using Hobby.Web.Authorize;
 using Hobby.Web.Controllers;
+using Hobby.Web.Parts;
 using NLog;
 
 namespace Hobby.Web.Controllers

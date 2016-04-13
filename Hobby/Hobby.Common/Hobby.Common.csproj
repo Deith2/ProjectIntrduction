@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authentication\HashPassowrd.cs" />
-    <Compile Include="Enum\PermissionType.cs" />
+    <Compile Include="Enums\PermissionType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

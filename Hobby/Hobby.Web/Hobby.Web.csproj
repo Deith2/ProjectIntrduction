@@ -172,7 +172,6 @@
     <Compile Include="Authorize\CustomPrincipalSerializeModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AngularController.cs" />
-    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Global.asax.cs">
@@ -182,6 +181,8 @@
     <Compile Include="Parts\Authorization\AuthorizationController.cs" />
     <Compile Include="Parts\Authorization\Models\LoginModel.cs" />
     <Compile Include="Parts\Authorization\Models\RegisterModel.cs" />
+    <Compile Include="Parts\BaseController.cs" />
+    <Compile Include="Parts\UserSettings\UserSettingsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +206,7 @@
     <Content Include="Parts\Authorization\Scripts\modal-view\modal-password.dir.js" />
     <Content Include="Parts\Authorization\Scripts\modal-view\modal-view.ctrl.js" />
     <Content Include="Parts\Authorization\Scripts\modal-view\modal-view.dir.js" />
+    <Content Include="Parts\UserSettings\Scripts\settings-view\settings-view.ctrl.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -226,6 +228,7 @@
     <Content Include="Parts\_ViewStart.cshtml" />
     <Content Include="Parts\Web.config" />
     <Content Include="Parts\Authorization\Views\Authorization.cshtml" />
+    <Content Include="Parts\UserSettings\Views\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -267,7 +270,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Parts\Authorization\Styles\" />
+    <Folder Include="Parts\UserSettings\Models\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\UserSettings\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

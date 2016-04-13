@@ -17,11 +17,11 @@ namespace Hobby.Web.Controllers
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
-        private readonly IUserService _userService;
+        private IAuthenticateService _authService;
 
-        public AccountController(IUserService userService)
+        public AccountController(IAuthenticateService authService)
         {
-            _userService = userService;
+            _authService = authService;
         }
         // GET: Account
         public ActionResult Index()
@@ -34,11 +34,11 @@ namespace Hobby.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = _userService.CheckUser(model.Email, model.Password);
+                var user = _authService.CheckUser(model.Email, model.Password);
 
                 if (user != null)
                 {
-                    var roles = _userService.PermissionActiveNameList(user.Id).ToList();
+                    var roles = _authService.PermissionActiveNameList(user.Id).ToList();
 
                     CustomPrincipalSerializeModel serializeModel = new CustomPrincipalSerializeModel();
                     serializeModel.UserId = user.Id;
@@ -99,7 +99,7 @@ namespace Hobby.Web.Controllers
 
                 try
                 {
-                    _userService.Register(entity);
+                    _authService.Register(entity);
                 }
                 catch (Exception)
                 {

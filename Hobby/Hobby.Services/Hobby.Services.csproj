@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationService.cs" />
     <Compile Include="Mappings\CategorieMappings.cs" />
     <Compile Include="Mappings\PermissionMappings.cs" />
     <Compile Include="Mappings\SettingMappings.cs" />

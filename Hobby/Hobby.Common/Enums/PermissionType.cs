@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hobby.Common.Enum
+namespace Hobby.Common.Enums
 {
     public enum PermissionType
     {
