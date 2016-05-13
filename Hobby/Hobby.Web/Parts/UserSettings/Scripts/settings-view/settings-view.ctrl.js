@@ -1,37 +1,23 @@
 ﻿var app = angular.module('appTable', []);
 
-app.controller('deafultCtrl', function ($scope, $http) {
+app.controller('deafultCtrl', function ($scope, getUserDetails) {
+ 
+    getUserDetails.getData(function (dataRespone) {
+        $scope.FirstName = dataRespone.data.FirstName;
+        $scope.LastName = dataRespone.data.LastName;
+        $scope.Email = dataRespone.data.Email;
 
-   
-      
+        $scope.concat = {
+            FirstName: dataRespone.data.FirstName,
+            LastName: dataRespone.data.LastName,
+            Email: dataRespone.data.Email
+        };
+    });
     
-    //$scope.login = function () {
-    //    $http({
-    //        method: "GET",
-    //        url: '../UserSettings/GetUser'
-    //    }).then(function mySucces(response) {
-
-    //    }, function myError(response) {
-    //        alert("Proszę spróbować za chwilę");
-    //    });
-    //};
-        $http({
-            method: "GET",
-            url: "../UserSettings/GetUser"
-        }).then(function mySucces(response) {
-           $scope.Email = response.data.Email
-           $scope.FirstName = response.data.FirstName
-           $scope.LastName = response.data.LastName          
-        }, function myError(response) {
-            alert("Proszę spróbować za chwilę");
-        });
-
-
-  
-
-        $scope.saveChanges = function (concat) {
-            console.log(concat)
-            $scope.FirstName = concat;
-
+    $scope.saveChanges = function (concat) {
+        console.log(concat);
+        $scope.FirstName = concat.FirstName;
+        $scope.LastName = concat.LastName;
+        $scope.Email = concat.Email;
     };
 });

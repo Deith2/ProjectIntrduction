@@ -15,7 +15,7 @@
     <AssemblyName>Hobby.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -32,6 +32,8 @@
     <WarningLevel>4</WarningLevel>
     <StyleCopEnabled>true</StyleCopEnabled>
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -182,6 +184,7 @@
     <Compile Include="Parts\Authorization\Models\LoginModel.cs" />
     <Compile Include="Parts\Authorization\Models\RegisterModel.cs" />
     <Compile Include="Parts\BaseController.cs" />
+    <Compile Include="Parts\UserSettings\Models\SettingsModel.cs" />
     <Compile Include="Parts\UserSettings\UserSettingsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -207,6 +210,7 @@
     <Content Include="Parts\Authorization\Scripts\modal-view\modal-view.ctrl.js" />
     <Content Include="Parts\Authorization\Scripts\modal-view\modal-view.dir.js" />
     <Content Include="Parts\UserSettings\Scripts\settings-view\settings-view.ctrl.js" />
+    <Content Include="Parts\UserSettings\Scripts\settings-view\settings-view.srv.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -270,7 +274,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Parts\Authorization\Styles\" />
-    <Folder Include="Parts\UserSettings\Models\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\UserSettings\" />
   </ItemGroup>
@@ -318,7 +321,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>12776</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

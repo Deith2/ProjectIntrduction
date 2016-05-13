@@ -24,5 +24,11 @@ namespace Hobby.Services
         {
             return _uow.Users.SingleAsNoTracking(p => p.Id == id).Map();
         }
+
+        public void AddUser(User user)
+        {
+            _uow.Users.Add(user);
+            _uow.Save();
+        }
     }
 }

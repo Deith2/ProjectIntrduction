@@ -3,48 +3,60 @@
 }
 
 <h2>Ogólne ustawienia konta</h2>
-<div id="settings" ng-app="appTable">
+<div id="settings" data-ng-app="appTable">
     <div data-ng-controller="deafultCtrl">
-        <table class="table">
-            <tr>
-                <td class="col-sm-4">Imię</td>
-                <td class="col-sm-5" ng-show="!showForms" ng-click="showForms=true" data-ng-model="FirstName">{{FirstName}}</td>
-                <td class="col-sm-3" ng-show="showForms">
-                    <input type="text" ng-model="FirstName" />
-                    <a href="#" ng-click="saveChanges(FirstName); showForms = false" class="glyphicon glyphicon-ok">Zapisz</a>
-                </td>
-                <pre>form = {{FirstName | json}}</pre>
-                <td class="col-sm-1">
-                    <a href="#" ng-click="showForms=true" class="glyphicon glyphicon-pencil"></a>
-                </td>              
-            </tr>
-            <tr>
-                <td class="col-sm-4">Nazwisko</td>
-                <td class="col-sm-5" ng-show="!showForms" ng-click="showForms2=true">{{ LastName }}</td>
-                @*<td class="col-sm-3" ng-show="showForms">
-                    <input ng-model="mountain.metres" />
-                    <a href="#" ng-click="saveChanges($index, mountain.mountain, mountain.metres); showForms = false" class="glyphicon glyphicon-ok">Zapisz</a>
-                </td>*@
-                <td class="col-sm-1">
-                    <a href="#" ng-click="showForms=true" class="glyphicon glyphicon-pencil"></a>
-                </td>
-            </tr>
-            <tr ng-class="{default: $even, success: $odd}">
-                <td class="col-sm-4">Email</td>
-                <td class="col-sm-5" ng-show="!showForms" ng-click="showForms=true">{{ Email }}</td>
-                @*<td class="col-sm-3" ng-show="showForms">
-                    <input ng-model="mountain.metres" />
-                    <a href="#" ng-click="saveChanges($index, mountain.mountain, mountain.metres); showForms = false" class="glyphicon glyphicon-ok">Zapisz</a>
-                </td>*@
-                <td class="col-sm-1">
-                    <a href="#" ng-click="showForms=true" class="glyphicon glyphicon-pencil"></a>
-                </td>
-            </tr>
-        </table>
+        <ng-form>
+            <table class="table">
+                <tr>
+                    <td class="col-sm-4">Imię</td>
+                    <td class="col-sm-5" data-ng-cloak data-ng-show="!editFirstName" data-ng-click="editFirstName=true" data-ng-model="concat.FirstName">{{FirstName}}</td>
+                    <td class="col-sm-3" ng-show="editFirstName">
+                        <input type="text" data-ng-cloak data-ng-model="concat.FirstName" />
+                        <a href="#" data-ng-click="saveChanges(concat); editFirstName = false" class="glyphicon glyphicon-ok">Zapisz</a>
+                    </td>
+
+                    <td class="col-sm-1">
+                        <a href="#" data-ng-click="editFirstName=true" class="glyphicon glyphicon-pencil"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-sm-4">Nazwisko</td>
+                    <td class="col-sm-5" data-ng-cloak data-ng-show="!editLastName" data-ng-click="editLastName=true" data-ng-model="concat.LastName">{{ LastName }}</td>
+                    <td class="col-sm-3" data-ng-show="editLastName">
+                        <input type="text" data-ng-cloak data-ng-model="concat.LastName" />
+                        <a href="#" data-ng-click="saveChanges(concat); editLastName = false" class="glyphicon glyphicon-ok">Zapisz</a>
+                    </td>
+                    <td class="col-sm-1">
+                        <a href="#" data-ng-click="editLastName=true" class="glyphicon glyphicon-pencil"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-sm-4">Email</td>
+                    <td class="col-sm-5" data-ng-cloak data-ng-show="!editEmail" data-ng-click="editEmail=true" data-ng-model="concat.Email">{{ Email }}</td>
+                    <td class="col-sm-3" data-ng-show="editEmail">
+                        <input type="text" data-ng-cloak data-ng-model="concat.Email" />
+                        <a href="#" data-ng-click="saveChanges(concat); editEmail = false" class="glyphicon glyphicon-ok">Zapisz</a>
+                    </td>
+                    <td class="col-sm-1">
+                        <a href="#" data-ng-click="editEmail=true" class="glyphicon glyphicon-pencil"></a>
+                    </td>                  
+                </tr>
+                <tr>
+                    <td class="col-sm-4">Wprowadź hasło</td>
+                    <td>
+                        <input type="password" data-ng-model="concat.Password" />
+                    </td>
+                </tr>
+            </table>
+            <button class="btn btn-success" type="submit">Zapisz</button>
+            <button class="btn btn-primary" type="button">Anuluj</button>
+            <pre>form = {{concat | json}}</pre>
+        </ng-form>
     </div>
 </div>
 @section Scripts{
     <script src="~/Parts/UserSettings/Scripts/settings-view/settings-view.ctrl.js"></script>
+    <script src="~/Parts/UserSettings/Scripts/settings-view/settings-view.srv.js"></script>
 }
 
 

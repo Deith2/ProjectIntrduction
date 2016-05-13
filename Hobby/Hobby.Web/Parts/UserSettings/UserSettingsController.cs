@@ -1,5 +1,8 @@
-﻿using Hobby.Services.Interfaces;
+﻿using Hobby.Common.Authentication;
+using Hobby.DTO;
+using Hobby.Services.Interfaces;
 using Hobby.Web.Controllers;
+using Hobby.Web.Parts.UserSettings.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -33,8 +36,20 @@ namespace Hobby.Web.Parts.UserSettings
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email
-            }, 
+            },
             JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult EditSettings(SettingsModel model)
+        {
+            var user = _userService.GetUserDTO(User.UserId);
+            var password = model.Password.getSHA1().ToUpper();
+            if (password.Equals(user.Password))
+            {              
+            }
+
+            return Json(new { });
         }
     }
 }

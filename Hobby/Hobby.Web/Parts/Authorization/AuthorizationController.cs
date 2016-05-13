@@ -96,7 +96,7 @@ namespace Hobby.Web.Parts.Authorization
                 }
                 catch (Exception ex)
                 {
-                    logger.Error("Error to register a new user", ex);
+                    logger.LogException(LogLevel.Error, "Error to register a new user", ex);
 
                     return Json("Error save");
                 }
