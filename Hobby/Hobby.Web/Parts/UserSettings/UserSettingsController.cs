@@ -1,5 +1,6 @@
 ﻿using Hobby.Common.Authentication;
 using Hobby.DTO;
+using Hobby.Entities;
 using Hobby.Services.Interfaces;
 using Hobby.Web.Controllers;
 using Hobby.Web.Parts.UserSettings.Models;
@@ -41,12 +42,33 @@ namespace Hobby.Web.Parts.UserSettings
         }
 
         [HttpPost]
-        public JsonResult EditSettings(SettingsModel model)
+        public ActionResult EditSettings(SettingsModel model)
         {
-            var user = _userService.GetUserDTO(User.UserId);
-            var password = model.Password.getSHA1().ToUpper();
-            if (password.Equals(user.Password))
-            {              
+            if (ModelState.IsValid)
+            {
+                var user = _userService.GetUserDTO(User.UserId);
+                var password = model.Password.getSHA1().ToUpper();
+                if (password.Equals(user.Password))
+                {
+                    user.LastName = model.LastName;
+                    user.FirstName = model.FirstName;
+                    user.Email = model.Email;
+
+                    var change = _userService.UpdateUser(user);
+                    if (change != null)
+                    {
+                        return Json(new
+                        {
+                            FirstName = user.FirstName,
+                            LastName = user.LastName,
+                            Email = user.Email
+                        });
+                    }
+                    else
+                    {
+                        return Json(new { Email = "Email is busy" });
+                    }
+                                 }
             }
 
             return Json(new { });

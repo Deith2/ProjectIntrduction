@@ -5,13 +5,13 @@
 <h2>Ogólne ustawienia konta</h2>
 <div id="settings" data-ng-app="appTable">
     <div data-ng-controller="deafultCtrl">
-        <ng-form>
+        <form>
             <table class="table">
                 <tr>
                     <td class="col-sm-4">Imię</td>
                     <td class="col-sm-5" data-ng-cloak data-ng-show="!editFirstName" data-ng-click="editFirstName=true" data-ng-model="concat.FirstName">{{FirstName}}</td>
                     <td class="col-sm-3" ng-show="editFirstName">
-                        <input type="text" data-ng-cloak data-ng-model="concat.FirstName" />
+                        <input type="text" data-ng-cloak data-ng-model="concat.FirstName" data-ng-required />
                         <a href="#" data-ng-click="saveChanges(concat); editFirstName = false" class="glyphicon glyphicon-ok">Zapisz</a>
                     </td>
 
@@ -23,7 +23,7 @@
                     <td class="col-sm-4">Nazwisko</td>
                     <td class="col-sm-5" data-ng-cloak data-ng-show="!editLastName" data-ng-click="editLastName=true" data-ng-model="concat.LastName">{{ LastName }}</td>
                     <td class="col-sm-3" data-ng-show="editLastName">
-                        <input type="text" data-ng-cloak data-ng-model="concat.LastName" />
+                        <input type="text" data-ng-cloak data-ng-model="concat.LastName" data-ng-required />
                         <a href="#" data-ng-click="saveChanges(concat); editLastName = false" class="glyphicon glyphicon-ok">Zapisz</a>
                     </td>
                     <td class="col-sm-1">
@@ -34,7 +34,7 @@
                     <td class="col-sm-4">Email</td>
                     <td class="col-sm-5" data-ng-cloak data-ng-show="!editEmail" data-ng-click="editEmail=true" data-ng-model="concat.Email">{{ Email }}</td>
                     <td class="col-sm-3" data-ng-show="editEmail">
-                        <input type="text" data-ng-cloak data-ng-model="concat.Email" />
+                        <input type="text" data-ng-cloak data-ng-model="concat.Email" data-ng-required />
                         <a href="#" data-ng-click="saveChanges(concat); editEmail = false" class="glyphicon glyphicon-ok">Zapisz</a>
                     </td>
                     <td class="col-sm-1">
@@ -42,16 +42,16 @@
                     </td>                  
                 </tr>
                 <tr>
-                    <td class="col-sm-4">Wprowadź hasło</td>
+                    <td class="col-sm-4">Potwierdź hasło</td>
                     <td>
-                        <input type="password" data-ng-model="concat.Password" />
+                        <input type="password" data-ng-model="concat.Password" placeholder="Wproadź hasło" data-ng-required />
                     </td>
                 </tr>
             </table>
-            <button class="btn btn-success" type="submit">Zapisz</button>
+            <button class="btn btn-success" type="submit" data-ng-click="Update(concat)">Zapisz</button>
             <button class="btn btn-primary" type="button">Anuluj</button>
             <pre>form = {{concat | json}}</pre>
-        </ng-form>
+        </form>
     </div>
 </div>
 @section Scripts{

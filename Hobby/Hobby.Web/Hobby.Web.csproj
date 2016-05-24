@@ -15,7 +15,7 @@
     <AssemblyName>Hobby.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -294,6 +294,14 @@
       <Project>{5c577129-ba13-4cbd-b833-d43ac271e988}</Project>
       <Name>Hobby.DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Hobby.Entities.Interface\Hobby.Entities.Interface.csproj">
+      <Project>{d9c9e31c-c8aa-499a-91fe-d1520ff8dbc8}</Project>
+      <Name>Hobby.Entities.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hobby.Entities\Hobby.Entities.csproj">
+      <Project>{65397ec7-8120-4f84-9842-d06a161663cc}</Project>
+      <Name>Hobby.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hobby.Ninject\Hobby.Ninject.csproj">
       <Project>{48539130-7d8f-4868-93f1-788b60c265f5}</Project>
       <Name>Hobby.Ninject</Name>
@@ -306,6 +314,9 @@
       <Project>{95e8de34-04aa-44ff-879d-b4c3791533dd}</Project>
       <Name>Hobby.SimpleInjector</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -321,7 +332,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>12776</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

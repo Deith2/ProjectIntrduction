@@ -17,7 +17,7 @@ namespace Hobby.Services.Mappings
             target.Description = source.Description;
             target.Id = source.Id;
             target.Name = source.Name;
-            target.Delete = source.Delete;
+            target.Deleted = source.Deleted;
             target.Value = source.Value;
 
             return target;
@@ -30,7 +30,7 @@ namespace Hobby.Services.Mappings
             target.Description = source.Description;
             target.Id = source.Id;
             target.Name = source.Name;
-            target.Delete = source.Delete;
+            target.Deleted = source.Deleted;
             target.Value = source.Value;
 
             return target;

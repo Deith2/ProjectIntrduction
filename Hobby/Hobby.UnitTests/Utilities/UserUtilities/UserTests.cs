@@ -1,6 +1,9 @@
 ﻿using Hobby.Common.Authentication;
+using Hobby.Data.Interface;
+using Hobby.UnitTests.TestingTools;
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Ninject;
 
 namespace Hobby.UnitTests.Utilities.UserUtilities
 {

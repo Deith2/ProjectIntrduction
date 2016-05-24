@@ -30,11 +30,9 @@ namespace Hobby.Services
             if (entity != null)
             {
                 return entity.Map();
-            }
-            else
-            {
-                return null;
-            }
+            }     
+       
+            return null;
         }
 
         public List<string> PermissionActiveNameList(decimal idUser)
@@ -44,7 +42,7 @@ namespace Hobby.Services
             var entity = _uow.UserPermissions.AllAsNoTracking(p => p.IdUser == idUser).Select(p => p.IdPermission);
             foreach (var idPermission in entity)
             {
-                var getActivePermission = _uow.Permissions.FirstOrDefaultAsNoTracking(p => p.Id == idPermission && p.Delete == false);
+                var getActivePermission = _uow.Permissions.FirstOrDefaultAsNoTracking(p => p.Id == idPermission && p.Deleted == false);
                 if (getActivePermission != null)
                 {
                     permissionActiveList.Add(getActivePermission.Name);
@@ -65,7 +63,7 @@ namespace Hobby.Services
                 _uow.Users.Add(entity);
                 _uow.Save();
 
-                var permission = _uow.Permissions.Single(p => p.Value == (int)PermissionType.User && p.Delete == false);
+                var permission = _uow.Permissions.Single(p => p.Value == (int)PermissionType.User && p.Deleted == false);
                 UserPermission userPermission = new UserPermission
                 {
                     IdUser = entity.Id,

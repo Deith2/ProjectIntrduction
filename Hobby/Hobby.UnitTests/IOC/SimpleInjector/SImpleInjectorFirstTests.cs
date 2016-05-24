@@ -81,7 +81,7 @@ namespace Hobby.UnitTests.IOC.SimpleInjector
                 var permissions = new PermissionDTO
                 {
                     Name = "testPermission1",
-                    Delete = false,
+                    Deleted = false,
                     Description = "TEST"
                 };
 

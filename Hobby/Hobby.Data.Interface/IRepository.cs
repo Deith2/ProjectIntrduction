@@ -10,6 +10,8 @@ namespace Hobby.Data.Interface
     {
         void Add(TEntity item);
 
+        void Update(TEntity item);
+
         TEntity GetById(object id);
 
         TEntity Single(Expression<Func<TEntity, bool>> filter);

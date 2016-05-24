@@ -30,5 +30,33 @@ namespace Hobby.Services
             _uow.Users.Add(user);
             _uow.Save();
         }
+
+        public void Update(User user)
+        {
+            _uow.Users.Update(user);
+            _uow.Save();
+        }
+
+        public UserDTO UpdateUser(UserDTO userDTO)
+        {
+            var entity = _uow.Users.FirstOrDefault(p => p.Id == userDTO.Id);
+            if (entity != null)
+            {
+                entity.LastName = userDTO.LastName;
+                entity.FirstName = userDTO.FirstName;
+                if (_uow.Users.SingleOrDefault(p => p.Email == userDTO.Email) != null)
+                {
+                    entity.Email = userDTO.Email;
+                    _uow.Users.Add(entity);
+                    _uow.Save();
+
+                    return entity;
+                }
+
+                return null;
+            }
+
+            return null;
+        }
     }
 }

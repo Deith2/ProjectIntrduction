@@ -19,7 +19,7 @@ namespace Hobby.Data.EntitiesConfiguration
             Property(e => e.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(e => e.Name).IsRequired();
-            Property(e => e.Delete).IsRequired();
+            Property(e => e.Deleted).IsRequired();
 
             Property(e => e.CreateDate)
                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);

@@ -31,6 +31,13 @@ namespace Hobby.Data
             DbSet.Add(item);
         }
 
+        public virtual void Update(TEntity item)
+        {
+            var entry = _context.Entry(item);
+            DbSet.Attach(item);
+            entry.State = EntityState.Modified;
+        }
+
         public virtual TEntity GetById(object id)
         {
             return DbSet.Find(id);

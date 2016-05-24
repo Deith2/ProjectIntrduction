@@ -13,5 +13,9 @@ namespace Hobby.Services.Interfaces
         UserDTO GetUserDTO(decimal id);
 
         void AddUser(User user);
+
+        void Update(User user);
+
+        UserDTO UpdateUser(UserDTO userDTO);
     }
 }
