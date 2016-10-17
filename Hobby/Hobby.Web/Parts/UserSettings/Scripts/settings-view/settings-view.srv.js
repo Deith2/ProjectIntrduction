@@ -15,11 +15,8 @@ app.service("getUserDetails", function ($http) {
 
 app.service("Update", function ($http) {
     this.saveChanges = function (callbackFunc) {
-        console.log("wszedlem");
-        console.log(callbackFunc);
         $http.post("../UserSettings/EditSettings", callbackFunc).success(function (data) {
-            console.log("udalo sie");
-            alert("dobrze");
+
         });
     };
 });

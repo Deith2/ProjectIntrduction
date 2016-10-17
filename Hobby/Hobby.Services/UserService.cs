@@ -39,21 +39,20 @@ namespace Hobby.Services
 
         public UserDTO UpdateUser(UserDTO userDTO)
         {
-            var entity = _uow.Users.FirstOrDefault(p => p.Id == userDTO.Id);
+            var entity = _uow.Users.SingleOrDefault(p => p.Id == userDTO.Id);
+            
             if (entity != null)
             {
-                entity.LastName = userDTO.LastName;
-                entity.FirstName = userDTO.FirstName;
-                if (_uow.Users.SingleOrDefault(p => p.Email == userDTO.Email) != null)
+                if (!_uow.Users.Any(p => p.Email == userDTO.Email))
                 {
                     entity.Email = userDTO.Email;
-                    _uow.Users.Add(entity);
-                    _uow.Save();
-
-                    return entity;
                 }
 
-                return null;
+                entity.LastName = userDTO.LastName;
+                entity.FirstName = userDTO.FirstName;
+                _uow.Save();
+
+                return entity.Map();                    
             }
 
             return null;

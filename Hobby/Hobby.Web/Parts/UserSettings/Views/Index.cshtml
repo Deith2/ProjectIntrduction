@@ -1,18 +1,23 @@
-﻿@{
+﻿@using Hobby.Web.Resources
+@{
     ViewBag.Title = "Settings";
+    
 }
 
 <h2>Ogólne ustawienia konta</h2>
 <div id="settings" data-ng-app="appTable">
     <div data-ng-controller="deafultCtrl">
-        <form>
+        <form role="form" name="form">
             <table class="table">
                 <tr>
                     <td class="col-sm-4">Imię</td>
                     <td class="col-sm-5" data-ng-cloak data-ng-show="!editFirstName" data-ng-click="editFirstName=true" data-ng-model="concat.FirstName">{{FirstName}}</td>
                     <td class="col-sm-3" ng-show="editFirstName">
-                        <input type="text" data-ng-cloak data-ng-model="concat.FirstName" data-ng-required />
+                        <input type="text" name="firstName" data-ng-cloak data-ng-model="concat.FirstName" data-ng-required="true" />
                         <a href="#" data-ng-click="saveChanges(concat); editFirstName = false" class="glyphicon glyphicon-ok">Zapisz</a>
+                        <div ng-messages="form.firstName.$error" style="color:maroon" role="alert">
+                            <div ng-message="required">@CommonStrings.FieldRequired</div>                          
+                        </div>
                     </td>
 
                     <td class="col-sm-1">
@@ -20,11 +25,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="col-sm-4">Nazwisko</td>
+                    <td class="col-sm-4">@CommonStrings.LastName</td>
                     <td class="col-sm-5" data-ng-cloak data-ng-show="!editLastName" data-ng-click="editLastName=true" data-ng-model="concat.LastName">{{ LastName }}</td>
                     <td class="col-sm-3" data-ng-show="editLastName">
-                        <input type="text" data-ng-cloak data-ng-model="concat.LastName" data-ng-required />
+                        <input type="text" name="lastName" data-ng-cloak data-ng-model="concat.LastName" data-ng-required="true" />
                         <a href="#" data-ng-click="saveChanges(concat); editLastName = false" class="glyphicon glyphicon-ok">Zapisz</a>
+                        <div ng-messages="form.lastName.$error" style="color:maroon" role="alert">
+                            <div ng-message="required">@CommonStrings.FieldRequired</div>
+                        </div>
                     </td>
                     <td class="col-sm-1">
                         <a href="#" data-ng-click="editLastName=true" class="glyphicon glyphicon-pencil"></a>
@@ -34,29 +42,38 @@
                     <td class="col-sm-4">Email</td>
                     <td class="col-sm-5" data-ng-cloak data-ng-show="!editEmail" data-ng-click="editEmail=true" data-ng-model="concat.Email">{{ Email }}</td>
                     <td class="col-sm-3" data-ng-show="editEmail">
-                        <input type="text" data-ng-cloak data-ng-model="concat.Email" data-ng-required />
+                        <input type="email" name="email" data-ng-cloak data-ng-model="concat.Email" data-ng-required="true" />
                         <a href="#" data-ng-click="saveChanges(concat); editEmail = false" class="glyphicon glyphicon-ok">Zapisz</a>
+                        <div ng-messages="form.email.$error" style="color:maroon" role="alert">
+                            <div ng-message="email">@CommonStrings.EmailRequired</div>
+                            <div ng-message="required">@CommonStrings.FieldRequired</div>
+                        </div>
                     </td>
                     <td class="col-sm-1">
                         <a href="#" data-ng-click="editEmail=true" class="glyphicon glyphicon-pencil"></a>
                     </td>                  
                 </tr>
                 <tr>
-                    <td class="col-sm-4">Potwierdź hasło</td>
+                    <td class="col-sm-4">@CommonStrings.RepeatPassword</td>
                     <td>
-                        <input type="password" data-ng-model="concat.Password" placeholder="Wproadź hasło" data-ng-required />
+                        <input type="password" name="password" data-ng-model="concat.Password" placeholder="Wprowadź hasło" required />
+                        @*<pre>form.password.$error = {{ form.password.$error | json }}</pre>*@
+                        <div ng-messages="form.password.$error" style="color:maroon" role="alert">
+                            <div ng-message="required">@CommonStrings.FieldRequired</div>
+                        </div>                       
                     </td>
                 </tr>
             </table>
             <button class="btn btn-success" type="submit" data-ng-click="Update(concat)">Zapisz</button>
             <button class="btn btn-primary" type="button">Anuluj</button>
             <pre>form = {{concat | json}}</pre>
-        </form>
-    </div>
+        </form>       
+    </div> 
 </div>
 @section Scripts{
     <script src="~/Parts/UserSettings/Scripts/settings-view/settings-view.ctrl.js"></script>
     <script src="~/Parts/UserSettings/Scripts/settings-view/settings-view.srv.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-messages.js"></script>
 }
 
 

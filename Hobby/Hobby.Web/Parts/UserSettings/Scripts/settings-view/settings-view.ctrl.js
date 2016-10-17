@@ -1,4 +1,4 @@
-﻿var app = angular.module('appTable', []);
+﻿var app = angular.module('appTable', ['ngMessages']);
 
 app.controller('deafultCtrl', function ($scope, getUserDetails, Update) {
 
@@ -15,14 +15,13 @@ app.controller('deafultCtrl', function ($scope, getUserDetails, Update) {
     });
 
     $scope.saveChanges = function (concat) {
-        console.log(concat);
         $scope.FirstName = concat.FirstName;
         $scope.LastName = concat.LastName;
         $scope.Email = concat.Email;
     };
 
     $scope.Update = function (concat) {
-        console.log("wszedlem do scope")
+
         Update.saveChanges(concat)
     } //{ //TO DO: Alert o zapisie};
 });

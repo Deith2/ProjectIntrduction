@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Ninject;
 using System.Collections.Generic;
+using Hobby.Data.Interface;
 
 namespace Hobby.UnitTests.Services
 {
@@ -56,6 +57,19 @@ namespace Hobby.UnitTests.Services
             //Assert
             Assert.AreEqual("Admin", result[0]);
             Assert.IsNull(resultFail);
+        }
+
+        [TestMethod]
+        public void editMethodTest()
+        {
+            var uow = IoCNinjectProvider.Instance.Get<IUnitOfWork>();
+
+            var user = uow.Users.GetById(1);
+
+            user.LastName = "test2";
+            user.FirstName = "test2";
+
+            uow.Save();
         }
     }
 }
