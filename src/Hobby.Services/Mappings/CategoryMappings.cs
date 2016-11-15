@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Hobby.Services.Mappings
 {
-    public static class CategorieMappings
+    public static class CategoryMappings
     {
-        public static CategorieDTO Map(this Categorie source)
+        public static CategoryDTO Map(this Category source)
         {
-            var target = new CategorieDTO();
+            var target = new CategoryDTO();
 
             target.Id = source.Id;
             target.Name = source.Name;
@@ -20,9 +20,9 @@ namespace Hobby.Services.Mappings
             return target;
         }
 
-        public static Categorie Map(this CategorieDTO source)
+        public static Category Map(this CategoryDTO source)
         {
-            var target = new Categorie();
+            var target = new Category();
 
             target.Id = source.Id;
             target.Name = source.Name;

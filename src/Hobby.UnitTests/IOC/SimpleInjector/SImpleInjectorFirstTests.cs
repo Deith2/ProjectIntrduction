@@ -73,7 +73,7 @@ namespace Hobby.UnitTests.IOC.SimpleInjector
             {
                 var uow = IoCCProvider.Container.GetInstance<IUnitOfWork>();
 
-                var categorie = new CategorieDTO
+                var categorie = new CategoryDTO
                 {
                     Name = "testCategorie1"
                 };

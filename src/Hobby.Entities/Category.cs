@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hobby.Entities
 {
-    public class Categorie : CategorieDTO, IEntity
+    public class Category : CategoryDTO, IEntity
     {
     }
 }

@@ -30,9 +30,9 @@ namespace Hobby.Data
             get { return GetRepository<Setting>(); }
         }
 
-        public IRepository<Categorie> Categories  
+        public IRepository<Category> Categories  
         {
-            get { return GetRepository<Categorie>(); }
+            get { return GetRepository<Category>(); }
         }
 
         public IRepository<Permission> Permissions

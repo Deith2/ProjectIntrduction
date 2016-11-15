@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthenticationService.cs" />
-    <Compile Include="Mappings\CategorieMappings.cs" />
+    <Compile Include="Mappings\CategoryMappings.cs" />
     <Compile Include="Mappings\PermissionMappings.cs" />
     <Compile Include="Mappings\SettingMappings.cs" />
     <Compile Include="Mappings\UserMappings.cs" />

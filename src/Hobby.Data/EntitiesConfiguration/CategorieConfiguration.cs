@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Hobby.Data.EntitiesConfiguration
 {
-    public partial class CategorieConfiguration : EntityTypeConfiguration<Categorie>
+    public partial class CategorieConfiguration : EntityTypeConfiguration<Category>
     {
         public CategorieConfiguration()
         {

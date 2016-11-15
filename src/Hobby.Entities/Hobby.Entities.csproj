@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categorie.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="Permission.cs" />
     <Compile Include="Setting.cs" />
     <Compile Include="User.cs" />

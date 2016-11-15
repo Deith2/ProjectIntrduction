@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hobby.DTO
 {
-    public class CategorieDTO
+    public class CategoryDTO
     {
         public virtual decimal Id { get; set; }
 
