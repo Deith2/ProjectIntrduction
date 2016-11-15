@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Value";
+    Layout = "~/Views/Shared/_LayoutAngular.cshtml";
+}
+
+<h2>Value</h2>
+<div ng-app="app">
+    <div ng-controller="defaultCtrl">
+        <pre>
+        $scope.objectValue = {{ objectValue }};
+        $scope.stringValue = {{ stringValue }};
+        $scope.numberValue = {{ numberValue }};
+    </pre>
+    </div>
+</div>
+<br />
+<h2>Factory</h2>
+<div id="factory" ng-app="app2">
+    <div ng-controller="defaultCtrl">
+        <pre>
+            $scope.oneFactory = {{ oneFactory }}
+    </pre>
+    </div>
+</div>
+<br />
+<h2>Service</h2>
+<div id="service" ng-app="app3">
+    <div ng-controller="defaultCtrl">
+        <pre>
+            $scope.newValue = {{ newValue }};
+            $scope.newValue2 = {{ newValue2 }};
+    </pre>
+    </div>
+</div>
+<br />
+<h2>Provider</h2>
+<div id="providers" ng-app="app4">
+    <div ng-controller="defaultCtrl">
+        <pre>
+            viewTest = {{ viewTest }}
+        </pre>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/AngularJSExample/DIValue.js"></script>
+}

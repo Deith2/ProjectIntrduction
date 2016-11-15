@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "My";
+    Layout = "~/Views/Shared/_LayoutAngular.cshtml";
+}
+
+<h2>Utworzenie textu który zostaje zczytywany</h2>
+
+<div ng-app="app">
+    <input ng-model="text" />
+    <p>{{text}}</p>
+    <h4>wprowadz witaj cooo :D</h4>
+    <input type="text" ng-model="message.sentence" />
+    <p>Witaj, {{message.sentence}}</p>
+
+    <div ng-controller="myCtrl">
+        {{ firstName + " " + lastName }}
+    </div>
+</div>
+
+<div id="DateSecondModule" ng-app="myapp2">
+    test
+    <div ng-controller="dateCtrl">
+        Data: {{ orginal() | date : 'shortDate' }}
+    </div>
+    @*Dziedziczenie*@
+    <div ng-controller="defaultCtrl">
+        <div ng-controller="inheritanceCtrl">
+            <input type="text" ng-model="uczen.imie" placeholder="Imie Ucznia" />
+            <button ng-click="poprawaTestu()">Poprawa testu</button>
+        </div>
+        {{ uczen }}
+    </div>
+
+    @*ngrepeat*@
+    <br />
+    LISTA
+    <div ng-controller="myDeafultCtrl">
+        <ul>
+            <li ng-repeat="oferta in oferty">
+                <p>Nazwa: {{ oferta.nazwa }} || cena: {{ oferta.cena }}</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@*watcher*@
+<div id="watcher" ng-app="listner">
+    <div ng-controller="defaultCtrl">
+        <div class="well">Liczba: {{ number }}</div>
+        <div>
+            <a class="btn btn-success" href="#" ng-click="add()">+</a>
+            <a class="btn btn-danger" href="#" ng-click="dec()">-</a>
+        </div>
+    </div>
+
+    @*applay - goniec spr*@
+    <div ng-controller="defaultCtrl1">
+        <div class="well">Wiadomość: {{ msg }}</div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="~/Scripts/AngularJSExample/controller.js"></script>   
+}
